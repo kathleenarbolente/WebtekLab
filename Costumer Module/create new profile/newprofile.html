@@ -3,6 +3,8 @@
 <head>
 <title>Create a profile</title>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel = "stylesheet" type = "text/css" href = "style.css" />
+
 </head>
 
 <body>
@@ -12,7 +14,8 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>Form Name</legend>
+<legend class ="topmain">iClick! Salon Services</legend>
+<p class = "create"> Create A New Account! </p>
 
 <!-- Text input-->
 <div class="form-group">
@@ -340,28 +343,24 @@
   </div>
 </div>
 
-<!-- Select Multiple -->
+<!-- Textarea -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="languages">Languages Known</label>
-  <div class="col-md-5">
-    <select id="languages" name="languages" class="form-control" multiple="multiple">
-      <option value="English">English</option>
-      <option value="Hindi">Hindi</option>
-      <option value="Malayalam">Malayalam</option>
-      <option value="Others">Others</option>
-    </select>
+  <label class="col-md-4 control-label" for="bio">Bio</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="address" name="address">short description of yourself</textarea>
   </div>
 </div>
 
 <!-- Prepended checkbox -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="check_critiria">Check the box</label>
+  <label class="col-md-4 control-label" for="check_critiria"></label>
   <div class="col-md-6">
     <div class="input-group">
       <span class="input-group-addon">     
           <input type="checkbox">     
       </span>
-      <input id="check_critiria" name="check_critiria" class="form-control" type="text" placeholder="I accept the criteria" required="">
+      <p>I agree to the <a href=#>Terms and Conditions</a></p>
+      
     </div>
     
   </div>
@@ -371,9 +370,10 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="submit"></label>
   <div class="col-md-4">
-    <button id="submit" name="submit" class="btn btn-success">Submit</button>
+    <button id="submit" name="submit" class="btn btn-success">Next</button>
   </div>
 </div>
+
 
 </fieldset>
 </form>
