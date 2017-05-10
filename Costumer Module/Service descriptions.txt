@@ -1,4 +1,4 @@
-+Hair Services: We have a wide variety of hair services. Ranging from haircuts from skilled and trained professionals ready to cut your hair. 
+﻿+Hair Services: We have a wide variety of hair services. Ranging from haircuts from skilled and trained professionals ready to cut your hair. 
  +They have attention to your hair texture and are well trained, passionate, and certified, so you don't have to worry about any problems. 
  +Just sit back, relax, and experience the expertise. Chemists and Hair experts also provide advice and consultation for your hair coloring and hair shape.
  +Products imported from world class brands will be provided with our approachable service crew, who will be ready to help you out! 
@@ -15,3 +15,8 @@
  +Therapeutic masks to make you look your best! 
  +
  +So what are you waiting for? Avail for our services, right now! We will be there to make you look great! 💖😘
+
+
+
+
+https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_dark_portfolio&stacked=h
