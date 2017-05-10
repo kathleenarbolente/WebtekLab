@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Yesteryear');
+
 /*! * Layana HTML 1.0.0 by WowThemes.net * All rights reserved http://www.wowthemes.net */
 html,body {
 	width:100%;
@@ -63,7 +66,6 @@ input[type=text] {
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    background-image: url(../img/demo/searchicon.png);
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
@@ -208,6 +210,13 @@ header .header-content .header-content-inner p {
 	line-height:1.4;
 	font-size:34px;
 	 color:#111;
+}
+.topmain {
+	text-align: center;
+	color: #f05f40;
+	font-family: 'Yesteryear';
+	font-size: 3em;
+}
 }
 .service-box {
 	margin:50px auto 0;
@@ -1093,4 +1102,20 @@ input.error,textarea.error {
 		padding:0 10px 10px 10px;
 		margin-top: 30px;
 	}
+}
+
+.searchbox {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url(../img/demo/searchicon.png);
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
 }
