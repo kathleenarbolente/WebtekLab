@@ -7,7 +7,7 @@
  */  
 include("database/db_conection.php");  
 $delete_id=$_GET['del'];  
-$delete_query="delete  from customers WHERE id='$delete_id'";//delete query  
+$delete_query="delete  from customers WHERE cust_id='$delete_id'";//delete query  
 $run=mysqli_query($dbcon,$delete_query);  
 if($run)  
 {  

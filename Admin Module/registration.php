@@ -38,7 +38,7 @@
                             </div>
 							
 							<div class="form-group">  
-                                <input class="form-control" placeholder="Contact Number" name="contactno" type="number" autofocus>  
+                                <input class="form-control" placeholder="Contact Number" name="contactno" type="text" autofocus>  
                             </div>
 							
 							<div class="form-group">
@@ -47,7 +47,7 @@
 
                             <div class="form-group">  
                                 <input class="form-control" placeholder="Username" name="username" type="text" autofocus>  
-                            </div>  
+                            </div>						
   
                             <div class="form-group">  
                                 <input class="form-control" placeholder="Password" name="password" type="password" autofocus>  
@@ -56,21 +56,12 @@
 							<div class="form-group">  
                                 <input class="form-control" placeholder="Confirm Password" name="password2" type="password" autofocus>  
                             </div>
-
-							<div class="form-group"> 
-							  <input class="form-control" placeholder="Status" list="status" name="status" autofocus>
-							  <datalist id="status">
-								<option value="Single">
-								<option value="Married">
-								<option value="Widowed">
-							  </datalist>
-							</div>
 							
 							<div class="form-group"> 
 							  <input class="form-control" placeholder="Gender" list="gender" name="gender" autofocus>
 							  <datalist id="gender">
-								<option value="Male">
-								<option value="Female">
+								<option value="M">
+								<option value="F">
 							  </datalist>
 							</div>
 							
@@ -104,26 +95,31 @@ if(isset($_POST['register']))
 	$username=trim($_POST['username']);
 	$password=$_POST['password'];
 	$password2=$_POST['password2'];
-	$status=$_POST['status'];
+	
+	if ($password!=$password2)
+ {
+     echo("Oops! Password did not match! Try again. ");
+ }
+ 
 	$gender=$_POST['gender'];	
   
     if($last_name=='' || $first_name=='' || $address=='' || $email=='' || $contactno=='' || $bday=='' || $username==''
-		|| $password=='' || $password2==''|| $status=='' || $gender=='')  
+		|| $password=='' || $password2==''|| $gender=='')  
     {  
         //javascript use for input checking
-		echo"<script>alert('Make sure to fill all input')</script>";		
-	exit();//this use if first is not work then other will not show  
+		echo"<script>alert('Make sure to fill all input')</script>";		 
     }
 	
+	
 	//validate phone number.only accept integer values
-	if((preg_match("/[^0-9]/", '', $str)) && strlen($str) == 10)
+	if((preg_match("/[^0-9]/", $contactno)) && strlen($contactno) == 10)
 	{
 	echo "Invalid phone number";
 
 	}
    
 	//here query check weather if user already registered so can't register again.  
-    $check_username_query="select * from users WHERE username='$username'";  
+    $check_username_query="select * from customers WHERE username='$username'";  
     $run_query=mysqli_query($dbcon,$check_username_query);  
   
     if(mysqli_num_rows($run_query)>0)  
@@ -133,22 +129,20 @@ if(isset($_POST['register']))
     }
 	
 	//insert the user into the database.  
-    $insert_customers="insert into customers (last_name,first_name,address,email,contactno,bday,username,password,status,gender) VALUES ('$last_name','$first_name','$address','$email','$contactno','$bday','$username','$password','$status','$gender')";  
+    $sql="insert into customers (last_name,first_name,address,email,contactno,bday,username,password,gender) VALUES ('$last_name','$first_name','$address','$email','$contactno','$bday','$username','$password','$gender')";  
     
 	//check if records added in table
-	if(mysqli_query($dbcon, $insert_customers)){
+	if(mysqli_query($dbcon, $sql)){
     echo "Records added successfully.";
 	} else{
-		echo "ERROR: Could not able to execute ." .mysqli_error($insert_customers);
+		echo ("" . mysqli_error($dbcon));
 	}
 	
-	if(mysqli_query($dbcon,$insert_customers))  
+	if(mysqli_query($dbcon,$sql))  
     {  
         echo"<script>window.open('welcome.php','_self')</script>";  
     }  
-  
-  
-  
+   
 }  
   
 ?>  

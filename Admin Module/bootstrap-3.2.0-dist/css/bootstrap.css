@@ -2061,11 +2061,11 @@ table {
   background-color: transparent;
 }
 th {
-  text-align: left;
+  text-align: center;
 }
 .table {
-  width: 100%;
-  max-width: 100%;
+  width: 900px;
+  max-width: auto;
   margin-bottom: 20px;
 }
 .table > thead > tr > th,

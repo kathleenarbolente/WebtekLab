@@ -1,7 +1,7 @@
 <?php  
 session_start();  
   
-if(!$_SESSION['email'])  
+if(!$_SESSION['username'])  
 {  
   
     header("Location: login.php");//redirect to login page to secure the welcome page without login access.  
@@ -18,7 +18,7 @@ if(!$_SESSION['email'])
 </head>  
   
 <body>  
-<h1>Welcome</h1><br>  
+<h1><center><b>Welcome</b></center></h1><br>
 <?php  
 echo $_SESSION['username'];  
 ?>  

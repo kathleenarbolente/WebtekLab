@@ -25,10 +25,10 @@ session_start();//session starts here
         <div class="col-md-4 col-md-offset-4">  
             <div class="login-panel panel panel-success">  
                 <div class="panel-heading">  
-                    <h3 class="panel-title">Sign In</h3>  
+                    <h3 class="panel-title">Sign In - Admin</h3>  
                 </div>  
                 <div class="panel-body">  
-                    <form role="form" method="post" action="login.php">  
+                    <form role="form" method="post" action="admin_login.php">  
                         <fieldset>  
                             <div class="form-group"  >  
                                 <input class="form-control" placeholder="Username" name="username" type="text" autofocus>  
@@ -38,13 +38,13 @@ session_start();//session starts here
                             </div>  
   
   
-                                <input class="btn btn-lg btn-success btn-block" type="submit" value="login" name="login" >  
+                                <input class="btn btn-lg btn-success btn-block" type="submit" value="login" name="admin_login" >  
   
                             <!-- Change this to a button or input when using this as a form -->  
                           <!--  <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a> -->  
                         </fieldset>  
-                    </form> 
-					<center><b>Not yet registered?</b> <br></b><a href="registration.php">Register here</a></center><!--for centered text-->  					
+                    </form>
+					<center><br></b><a href="login.php">Back</a></center>					
 					<center><br></b><a href="admin_login.php">Log in as Admin</a></center>
 				</div>  
             </div>  
@@ -61,28 +61,23 @@ session_start();//session starts here
   
 include("database/db_conection.php");  
   
-//customer login
-if(isset($_POST['login']))  
+//admin login
+if(isset($_POST['admin_login']))//this will tell us what to do if some data has been post through form with button.  
 {  
     $username=$_POST['username'];  
     $password=$_POST['password'];  
-	  
-	  //function verify($password, $password_hash) {
-		//return crypt($password, $password_hash) == $password_hash;
-	//}
-    $customers_query="select * from customers WHERE username='$username' AND password='$password'";  
   
-    $run_query=mysqli_query($dbcon,$customers_query);  
+    $admin_query="select * from admin where username='$username' AND password='$password'";  
+  
+    $run_query=mysqli_query($dbcon,$admin_query);  
   
     if(mysqli_num_rows($run_query)>0)  
     {  
-        echo "<script>window.open('welcome.php','_self')</script>";  
   
-        $_SESSION['username']=$username;//here session is used and value of $username store in $_SESSION.  
-  
+        echo "<script>window.open('index.php','_self')</script>"; 
     }  
-    else { echo "<script>alert('Username or password is incorrect!')</script>";}  
-
+    else {echo"<script>alert('Admin Details are incorrect..!')</script>";}  
+  
 }
-
+  
 ?>  
