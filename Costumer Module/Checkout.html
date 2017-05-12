@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey w3-content" style="max-width:1200px">
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#checkout" class="w3-bar-item w3-button w3-hover-black">Step 1<p>Indicate method of payment!</p></a>
+      <a href="#validate" class="w3-bar-item w3-button w3-hover-black">Step 2<p>Validate payment method!</p></a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">Step 3<p>Confirm transaction.</p></a> 
+    </div>
+  </div>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main">
+
+  <!-- Header -->
+  <header id="portfolio">
+    <div class="w3-container">
+    <h1 id="checkout"><b>Method Of Payment</b></h1>
+    <center><h3 style="margin-top:50px;margin-bottom:50px;">Please choose from the following method of payments.</h3></center>
+    </div>
+  </header>
+  
+  <!-- First Div-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <a href="https://www.paypal.com/ph/home" target="_blank"><img src="http://crunchfitness.ie/media/PayPal-Logo.jpg" alt="Paypal" style="height:202px;width:100%" class="w3-hover-opacity"></a>
+      <div class="w3-container w3-white">
+        <p><b>Paypal</b></p>
+        <p>Make your payment easy and hustle free</p>
+        <center><input type="checkbox" checked="checked"></center>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <a href="https://www.mastercard.us/en-us.html" target="_blank"><img src="https://www.penfinancial.com/SharedContent/images/1aMastercard.jpg" alt="Mastercard" style="height:202px;width:100%;" class="w3-hover-opacity"></a>
+      <div class="w3-container w3-white">
+        <p><b>MasterCard</b></p>
+        <p>Pay with ease of mind with MasterCard!</p>
+        <center><input type="checkbox" checked="checked"></center>
+      </div>
+    </div>
+    <div class="w3-third w3-container" >
+      <a href="https://paymaya.com/" target="_blank"><img src="http://www.gadgetsmagazine.com.ph/wp-content/uploads/2015/11/Paymaya-logo.jpg" alt="Paymaya" style="height:202px;width:100%;" class="w3-hover-opacity"></a>
+      <div class="w3-container w3-white">
+        <p><b>PayMaya</b></p>
+        <p>Pay on the go with PayMaya</p>
+        <center><input type="checkbox" checked="checked"></center>
+      </div>
+    </div>
+  </div>
+    
+ <!-- Second Div-->
+    <div class="w3-container" style="margin-top:100px;">
+    <h1 id="validate"><b>Validate Payment Method</b></h1>
+    </div>
+    <center>
+    <div style="margin-top:50px;margin-bottom:50px;">
+    <h3>This is to verify that you are using your account. We require you to input your login details.</h3>    
+    </div>
+    <div class="container">
+      <label><b>Username:</b></label>
+      <input type="text" placeholder="Enter Username" name="user" required>
+
+      <label><b>Password:</b></label>
+      <input type="password" placeholder="Enter Password" name="pass" required>
+        
+      <button type="submit">Verify</button>
+    </div>
+    </center>
+    
+  <!-- Second Div-->
+    <div class="w3-container" style="margin-top:100px;">
+    <h1 id="validate"><b>Confirm Transaction</b></h1>
+    </div>
+    <div style="margin-top:50px;margin-bottom:50px;">
+    <center><h4>You must verify that by clicking continue you accept the <a href="#">terms of use agreement</a>.</h4><input type="checkbox" checked="checked"><button type="submit" style="margin-left:20px;">Continue</button></center>    
+    </div>
+    
+    
+    
+<!-- End page content -->
+</div>
+
+</body>
+</html>
