@@ -2,23 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
-</style>
-    
-    
-<body class="w3-theme-l5">
-<title>User Profile</title>
 <!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="css/mySPprofile.css" type="text/css">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css" 
+integrity="sha384-Wrgq82RsEean5tP3NK3zWAemiNEXofJsTwTyHmNb/iL3dP/sZJ4+7sOld1uqYJtE" crossorigin="anonymous">
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 <!-- Custom Fonts -->
 <link href='https://fonts.googleapis.com/css?family=Mrs+Sheppards%7CDosis:300,400,700%7COpen+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800;' rel='stylesheet' type='text/css'>
@@ -33,10 +21,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-    
+
 </head>
-<body id="page-top">
+    
+<body>
+
+<legend class="topmain">My Profile</legend>
+
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
 <div class="container">
   <!-- Brand and toggle get grouped for better mobile display -->
@@ -47,23 +38,22 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand page-scroll" href="#page-top"><img src="" alt=""></a>
   </div>
     
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
       <li>
-      <a class="page-scroll" href="index.html">Home</a>
-            </li>
+      <a class="page-scroll" href="SPindex.html">Home</a>
+      </li>
+      <li>
+      <a class="page-scroll" href="#transactions">Transactions</a>
+      </li>
+      <li>
+      <a class="page-scroll" href="#mySPtop">My Profile</a>
+      </li>
             <li>
-      <a class="page-scroll" href="#contact">Notification</a>
-      </li>
-      <li>
-      <a class="page-scroll" href="#contact">Payments</a>
-      </li>
-      <li>
-      <a class="page-scroll" href="#">Log Out</a>
+      <a class="page-scroll" href="#">Bell</a>
       </li>
     </ul>
   </div>
@@ -72,153 +62,237 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 <!-- /.container -->
 </nav>
 
-    <!-- Page Container -->
-<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
-  <!-- The Grid -->
-  <div class="w3-row">
-    <!-- Left Column -->
-    <div class="w3-col m3">
-      <!-- Profile -->
-      <div class="w3-card-2 w3-round w3-white">
-        <div class="w3-container">
-         <h4 class="w3-center">Profile</h4>
-         <p class="w3-center"><img src="img/demo/avatar.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
-         <hr>
-         <p><i class="fa fa-user-circle fa-fw w3-margin-right w3-text-theme"></i> Liza Soberano</p>
-         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Manila,Philippines</p>
-         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1996</p>
+<section id="mySPtop">
+<div class="container">
+    <div class="profile-head">
+        <!--col-md-4 col-sm-4 col-xs-12 close-->
+        <div class="col-md- col-sm-4 col-xs-12">
+            <img src="http://www.newlifefamilychiropractic.net/wp-content/uploads/2014/07/300x300.gif" class="img-responsive"/>
+            <h6>Vijayan Karuppaiah</h6>
         </div>
-      </div>
-      <br>
+        <!--col-md-4 col-sm-4 col-xs-12 close-->
 
-  
-      
-      <!-- Accordion -->
-      
-      <br>
-      
-      <!-- Alert Box -->
-      <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
-        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
-          <i class="fa fa-remove"></i>
-        </span>
-        <p><strong>Hey!</strong></p>
-        <p>Someone message you.Check it out.</p>
-      </div>
-    
-    <!-- End Left Column -->
-    </div>
-    
-    <!-- Middle Column -->
-    <div class="w3-col m7">
-    
-      <div class="w3-row-padding">
-        <div class="w3-col m12">
-          <div class="w3-card-2 w3-round w3-white">
-            <div class="w3-container w3-padding">
-                <h3 class="w3-opacity">Welcome!</h3>
-            </div>
-          </div>
+        <div class="col-md-5 col-sm-5 col-xs-12">
+            <h5>Vijayan Karuppaiah</h5> <br>
+            <ul>
+                <li><span class="glyphicon glyphicon-briefcase"></span> Hair/Makeup</li>
+                <li><span class="glyphicon glyphicon-map-marker"></span> Philippines</li>
+                <li><span class="glyphicon glyphicon-home"></span> Chamiers Towers (East Wing), 5<sup>th</sup> Floor, No: 37,<br/>    Chamiers Road, Teynampet, Chennai-600018 </li>
+                <li><span class="glyphicon glyphicon-phone"></span> <a href="#" title="call">(+91) 9840550049</a></li>
+                <li><span class="glyphicon glyphicon-envelope"></span><a href="#" title="mail">vijayan@rsicms.com</a></li>
+            </ul>
         </div>
-      </div>
-      
-      <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
-        <h4>Unfinished Transactions</h4><br>
-        <hr class="w3-clear">
-      </div>
-      
-      <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
-        <h4>Recent Transactions</h4><br>
-        <hr class="w3-clear">
-      </div>
-
-       <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
-        <h4>All</h4><br>
-        <hr class="w3-clear">
-      </div>
-    <!-- End Middle Column -->
     </div>
-    
-    <!-- Right Column -->
-    <div class="w3-col m2">
-      <div class="w3-card-2 w3-round w3-white w3-center">
-        <div class="w3-container">
-          <p></p>
-          <p><strong>Pending Requests</strong></p>
-          <p>Lorem ipsum</p>
-          <p><button class="w3-button w3-block w3-theme-l4">View</button></p>
-        </div>
-      </div>
-      <br>
-      
-      <div class="w3-card-2 w3-round w3-white w3-padding-32 w3-center">
-        <p><i class="fa fa-bug w3-xxlarge"></i></p>
-      </div>
-      
-    <!-- End Right Column -->
-    </div>
-    
-  <!-- End Grid -->
-  </div>
-  
-<!-- End Page Container -->
+    <!--profile-head close-->
 </div>
-<br>
-    
-    
-    
+<!--container close-->
+</section>
+<br/>
+<br/>
 
+<div class="contain">
+    <div class="col-sm-8">
+        <div data-spy="scroll" class="tabbable-panel">
+            <div class="tabbable-line">
+                <div class="tab-content">
+                        <div class="well well-sm">
+                            <h4>PERSONAL DATA</h4>
+                        </div>
+                    <table class="table bio-table">
+                        <tbody>
+                            <tr>      
+                                <td>Firstname</td>
+                                <td>: Vijayan</td> 
+                            </tr>
+                            <tr>    
+                                <td>Lastname</td>
+                                <td>: Karuppaiah</td>
+                            </tr>
+                            <tr>    
+                                <td>Date of Birth</td>
+                                <td>: 6 March 1980</td>       
+                            </tr>
+                            <tr>
+                                <td>Gender</td>
+                                <td>: Male</td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-4">
+    <div class="panel panel-default">
+        <div class="menu_title">
+            <b>Name:</b>
+            <p>Arbigas, Kathnol Rapbeh</p>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="email">BIO</label>
+                        <p>I want to curl your lashes permanently like my curly curly bolbols. u know et hun. xoxo! </p>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Services Offered</label><br>
+                        <p>Bang ur mum</p>
+                        <p>make u wet</p>
+                        <p>bite ur nipples</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Section Transactions
+================================================== -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 text-center">
+            <h2 class="section-heading">MY <b>TRANSACTIONS</b></h2>             
+        </div>
+</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" id="transactions">
+            <div class="alert alert-success" style="display:none;">
+                <span class="glyphicon glyphicon-ok"></span> Drag table row and cange Order</div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Client
+                        </th>
+                        <th>
+                            Service
+                        </th>
+                        <th>
+                            Address
+                        </th>
+                        <th>
+                            Schedule
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="alt">
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                    </tr>
+                    <tr class="alt">
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                    </tr>
+                    <tr class="alt">
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="clearfix">
+</div>
+</section>
 <!-- Section Footer
 ================================================== -->
 <section class="bg-dark">
-    
 <div class="container">
 <div class="row">
-  <div class="col-md-12 text-center">
-    <h1 class="bottombrand wow flipInX">iClickServices</h1>
-         <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-  <!-- End footer -->
-  </footer>
-    <p>
-      &copy; Webtek 2017 
-    </p>
-  </div>
+    <div class="col-md-12 text-center">
+        <h1 class="bottombrand wow flipInX">iClick</h1>
+        <p>
+            &copy; 2017 
+        </p>
+    </div>
 </div>
 </div>
 </section>
 
 <!-- jQuery -->
-<script>
-// Accordion
-function myFunction(id) {
-    var x = document.getElementById(id);
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-        x.previousElementSibling.className += " w3-theme-d1";
-    } else { 
-        x.className = x.className.replace("w3-show", "");
-        x.previousElementSibling.className = 
-        x.previousElementSibling.className.replace(" w3-theme-d1", "");
-    }
-}
-
-// Used to toggle the menu on smaller screens when clicking on the menu button
-function openNav() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else { 
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-</script>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/parallax.js"></script>
@@ -227,5 +301,8 @@ function openNav() {
 <script src="js/jquery.easing.min.js"></script>
 <script src="js/wow.min.js"></script>
 <script src="js/common.js"></script>
+<script src="js/mySPprofile.js"></script>
+
+
 </body>
 </html>
