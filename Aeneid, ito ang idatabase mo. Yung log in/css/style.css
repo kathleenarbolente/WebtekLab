@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
-@import url('https://fonts.googleapis.com/css?family=Yesteryear');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 /*! * Layana HTML 1.0.0 by WowThemes.net * All rights reserved http://www.wowthemes.net */
 html,body {
@@ -214,7 +214,7 @@ header .header-content .header-content-inner p {
 .topmain {
 	text-align: center;
 	color: #f05f40;
-	font-family: 'Yesteryear';
+	font-family: 'Raleway';
 	font-size: 3em;
 }
 }
