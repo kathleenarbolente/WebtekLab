@@ -31,7 +31,7 @@
                 </div>
               
                  <span class="logout-spn" >
-                  <a href="#" style="color:#fff;">LOGOUT</a>  
+                  <a href="logout.php" style="color:#fff;">LOGOUT</a>  
 
                 </span>
             </div>
@@ -47,7 +47,7 @@
                    
 
                     <li>
-                        <a href="ui.php"><i class="fa fa-table "></i>Request</a>
+                        <a href="request.php"><i class="fa fa-table "></i>Request</a>
                     </li>
                     
                     <li>
@@ -59,79 +59,79 @@
                     </li>
                     
                     <li>
-                        <a href="service.php" ><i class="fa fa-desktop "></i>ServiceProvider</a>
+                        <a href="service.php" ><i class="fa fa-desktop "></i>Service Provider</a>
                     </li>
 
                 </ul>
-                            </div>
+           </div>
 
-        </nav>
+        </nav><br>
         <!-- /. NAV SIDE  -->
-	</div>
-	<br>
 	<div class="table-scrol">  
-    <h1 align="center">All the Users</h1>  
-  
-<div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
-  
-  
-    <table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
-        <thead>  
-  
-        <tr>
-            <th>Customer Id</th>  
-            <th>Last Name</th>
-			<th>First Name</th> 			
-            <th>Address</th>  
-            <th>E-mail</th>  
-            <th>Contact Number</th>
-			<th>Birthday</th>
-			<th>Username</th>
-			<th>Password</th>
-			<th>Gender</th>
-			<th>Action</th>
-        </tr>  
-        </thead>  
-  
-        <?php  
-			include("database/db_conection.php");  
-			$view_salon_query="select * from customers";//select query for viewing users.  
-			$run=mysqli_query($dbcon,$view_salon_query);//here run the sql query.  
+		<h1 align="center">All the Users</h1>  
 	  
-			while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
-			{  
-				$cust_id=$row[0];  
-				$last_name=$row[1];
-				$first_name=$row[2];
-				$address=$row[3];			
-				$email=$row[4];  
-				$contactno=$row[5];
-				$birthday=$row[6]; 
-				$username=$row[7]; 
-				$password=$row[8]; 
-				$gender=$row[9];
-        ?>  
-  
-        <tr>  
-<!--here showing results in the table -->  
-            <td><?php echo $cust_id;  ?></td>  
-            <td><?php echo $last_name;  ?></td>  
-            <td><?php echo $first_name;  ?></td>  
-            <td><?php echo $address;  ?></td>
-			<td><?php echo $email;  ?></td> 
-			<td><?php echo $contactno;  ?></td> 
-			<td><?php echo $birthday;  ?></td> 
-			<td><?php echo $username;  ?></td> 
-			<td><?php echo $password;  ?></td> 
-			<td><?php echo $gender;  ?></td> 
-            <td><a href="delete.php?del=<?php echo $cust_id ?>"><button class="btn btn-danger">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
-        </tr>  
-  
-        <?php } ?>  
-  
-    </table>  
+		<div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
+	  
+	  
+		<table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
+				<thead>  
+		  
+				<tr>
+					<th>Customer Id</th>  
+					<th>Last Name</th>
+					<th>First Name</th> 			
+					<th>Address</th>  
+					<th>E-mail</th>  
+					<th>Contact Number</th>
+					<th>Birthday</th>
+					<th>Username</th>
+					<th>Password</th>
+					<th>Gender</th>
+					<th>Action</th>
+				</tr>  
+				</thead>  
+		  
+				<?php  
+					include("database/db_conection.php");  
+					$view_salon_query="select * from customers";//select query for viewing users.  
+					$run=mysqli_query($dbcon,$view_salon_query);//here run the sql query.  
+			  
+					while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
+					{  
+						$cust_id=$row[0];  
+						$last_name=$row[1];
+						$first_name=$row[2];
+						$address=$row[3];			
+						$email=$row[4];  
+						$contactno=$row[5];
+						$birthday=$row[6]; 
+						$username=$row[7]; 
+						$password=$row[8]; 
+						$gender=$row[9];
+				?>  
+		  
+				<tr>  
+		<!--here showing results in the table -->  
+					<td><?php echo $cust_id;  ?></td>  
+					<td><?php echo $last_name;  ?></td>  
+					<td><?php echo $first_name;  ?></td>  
+					<td><?php echo $address;  ?></td>
+					<td><?php echo $email;  ?></td> 
+					<td><?php echo $contactno;  ?></td> 
+					<td><?php echo $birthday;  ?></td> 
+					<td><?php echo $username;  ?></td> 
+					<td><?php echo $password;  ?></td> 
+					<td><?php echo $gender;  ?></td> 
+					<td><a href="delete_client.php?del=<?php echo $cust_id ?>"><button class="btn btn-danger">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
+				</tr>  
+		  
+				<?php } ?>  
+		  
+			</table>  
         </div>  
-</div>  
+	</div>  
+	</div>
+	
           
 
      <!-- /. WRAPPER  -->

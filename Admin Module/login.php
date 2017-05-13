@@ -44,7 +44,8 @@ session_start();//session starts here
                           <!--  <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a> -->  
                         </fieldset>  
                     </form> 
-					<center><b>Not yet registered?</b> <br></b><a href="registration.php">Register here</a></center><!--for centered text-->  					
+					<center><b>Not yet registered? Register here</b> <br></b><a href="registration_cust.php">Customer</a></center>
+					<center><a href="registration_sp.php">Service Provider</a></center><!--for centered text--> 					
 					<center><br></b><a href="admin_login.php">Log in as Admin</a></center>
 				</div>  
             </div>  
@@ -67,10 +68,9 @@ if(isset($_POST['login']))
     $username=$_POST['username'];  
     $password=$_POST['password'];  
 	  
-	  //function verify($password, $password_hash) {
-		//return crypt($password, $password_hash) == $password_hash;
-	//}
-    $customers_query="select * from customers WHERE username='$username' AND password='$password'";  
+
+    $customers_query="select * from customers WHERE username='$username' AND password='$password'"; 
+	$sp_query="select * from service_providers WHERE username='$username' AND password='$password'";	
   
     $run_query=mysqli_query($dbcon,$customers_query);  
   

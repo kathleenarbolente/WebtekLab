@@ -10,8 +10,7 @@
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
         <!-- CUSTOM STYLES-->
     <link href="assets/css/custom.css" rel="stylesheet" />
-     <!-- GOOGLE FONTS-->
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
 </head>
 <body>
      
@@ -32,7 +31,7 @@
                 </div>
               
                  <span class="logout-spn" >
-                  <a href="#" style="color:#fff;">LOGOUT</a>  
+                  <a href="logout.php" style="color:#fff;">LOGOUT</a>  
 
                 </span>
             </div>
@@ -43,12 +42,12 @@
                 <ul class="nav" id="main-menu">
                  
                     <li>
-                        <a href="index.html" ><i class="fa fa-desktop "></i>Dashboard </a>
+                        <a href="index.php" ><i class="fa fa-desktop "></i>Dashboard </a>
                     </li>
                    
 
                     <li class="active-link">
-                        <a href="ui.php"><i class="fa fa-table "></i>Request</a>
+                        <a href="request.php"><i class="fa fa-table "></i>Request</a>
                     </li>
                     
                     <li>
@@ -60,7 +59,7 @@
                     </li>
                     
                     <li>
-                        <a href="index.php" ><i class="fa fa-desktop "></i>ServiceProvider</a>
+                        <a href="service.php" ><i class="fa fa-desktop "></i>Service Provider</a>
                     </li>
 
 
