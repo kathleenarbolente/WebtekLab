@@ -10,8 +10,7 @@
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
         <!-- CUSTOM STYLES-->
     <link href="assets/css/custom.css" rel="stylesheet" />
-     <!-- GOOGLE FONTS-->
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
 </head>
 <body>
      
@@ -52,7 +51,7 @@
                    
 
                     <li>
-                        <a href="ui.php"><i class="fa fa-table "></i>Request</a>
+                        <a href="request.php"><i class="fa fa-table "></i>Request</a>
                     </li>
                     
                     <li>
@@ -64,12 +63,12 @@
                     </li>
                     
                     <li>
-                        <a href="index.php" ><i class="fa fa-desktop "></i>ServiceProvider</a>
+                        <a href="index.php" ><i class="fa fa-desktop "></i>Service Provider</a>
                     </li>
                         
                     
                 </ul>
-                            </div>
+           </div>
 
         </nav>
         <!-- /. NAV SIDE  -->

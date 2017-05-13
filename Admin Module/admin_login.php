@@ -45,7 +45,6 @@ session_start();//session starts here
                         </fieldset>  
                     </form>
 					<center><br></b><a href="login.php">Back</a></center>					
-					<center><br></b><a href="admin_login.php">Log in as Admin</a></center>
 				</div>  
             </div>  
         </div>  

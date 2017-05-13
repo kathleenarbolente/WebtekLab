@@ -1,8 +1,4 @@
-<?php  
-session_start();//session starts here  
-  
-?> 
-
+<!DOCTYPE html>
 <html>
 <head>
       <meta charset="utf-8" />
@@ -32,7 +28,7 @@ session_start();//session starts here
                 </div>
               
                  <span class="logout-spn" >
-                  <a href="#" style="color:#fff;">LOGOUT</a>  
+                  <a href="logout.php" style="color:#fff;">LOGOUT</a>  
 
                 </span>
             </div>
@@ -48,7 +44,7 @@ session_start();//session starts here
                    
 
                     <li>
-                        <a href="ui.php"><i class="fa fa-table "></i>Request</a>
+                        <a href="request.php"><i class="fa fa-table "></i>Request</a>
                     </li>
                     
                     <li class="active-link">
@@ -60,7 +56,7 @@ session_start();//session starts here
                     </li>
                     
                     <li>
-                        <a href="service.html" ><i class="fa fa-desktop "></i>ServiceProvider</a>
+                        <a href="service.html" ><i class="fa fa-desktop "></i>Service Provider</a>
                     </li>
 
                 </ul>

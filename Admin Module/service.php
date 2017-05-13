@@ -10,8 +10,7 @@
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
         <!-- CUSTOM STYLES-->
     <link href="assets/css/custom.css" rel="stylesheet" />
-     <!-- GOOGLE FONTS-->
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
 </head>
 <body>
      
@@ -32,7 +31,7 @@
                 </div>
               
                  <span class="logout-spn" >
-                  <a href="#" style="color:#fff;">LOGOUT</a>  
+                  <a href="logout.php" style="color:#fff;">LOGOUT</a>  
 
                 </span>
             </div>
@@ -48,7 +47,7 @@
                    
 
                     <li>
-                        <a href="ui.php"><i class="fa fa-table "></i>Request</a>
+                        <a href="request.php"><i class="fa fa-table "></i>Request</a>
                     </li>
                     
                     <li>
@@ -60,15 +59,71 @@
                     </li>
                     
                     <li class="active-link">
-                        <a href="service.html" ><i class="fa fa-desktop "></i>ServiceProvider</a>
+                        <a href="service.php" ><i class="fa fa-desktop "></i>Service Provider</a>
                     </li>
 
                 </ul>
-                            </div>
+             </div>
 
-        </nav>
+        </nav><br>
+		
+		<div class="table-scrol">  
+		<h1 align="center">All the Users</h1>  
+	  
+		<div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
+	  
+	  
+		<table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
+				<thead>  
+		  
+				<tr>
+					<th>S.P Id</th>  
+					<th>Last Name</th>
+					<th>First Name</th> 			
+					<th>Username</th>  
+					<th>Password</th>
+					<th>Gender</th>
+					<th>Phone Number</th>
+					<th>Action</th>
+				</tr>  
+				</thead>  
+		  
+				<?php  
+					include("database/db_conection.php");  
+					$view_salon_query="select * from service_providers";//select query for viewing users.  
+					$run=mysqli_query($dbcon,$view_salon_query);//here run the sql query.  
+			  
+					while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
+					{  
+						$serv_id=$row[0];  
+						$last_name=$row[1];
+						$first_name=$row[2];
+						$username=$row[3];			 
+						$password=$row[4]; 
+						$gender=$row[5];
+						$phonenumber=$row[6];
+				?>  
+		  
+				<tr>  
+		<!--here showing results in the table -->  
+					<td><?php echo $serv_id;  ?></td>  
+					<td><?php echo $last_name;  ?></td>  
+					<td><?php echo $first_name;  ?></td>  
+					<td><?php echo $username;  ?></td>
+					<td><?php echo $password;  ?></td> 
+					<td><?php echo $gender;  ?></td>  
+					<td><?php echo $phonenumber;  ?></td> 
+					<td><a href="delete_sp.php?del=<?php echo $serv_id ?>"><button class="btn btn-danger">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
+				</tr>  
+		  
+				<?php } ?>  
+		  
+			</table>  
+        </div>  
+	</div> 
+		
           
-
+	</div>
      <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
