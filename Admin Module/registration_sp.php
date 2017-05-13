@@ -84,9 +84,9 @@ if(isset($_POST['registration_sp']))
 
 	
 	if ($password!=$password2)
- {
-     echo("Oops! Password did not match! Try again. ");
- }
+     {
+         echo"<script>alert('Password did not match')</script>";
+     }
  
 	$gender=$_POST['gender'];	
   
@@ -109,6 +109,13 @@ if(isset($_POST['registration_sp']))
 	
 	//insert the user into the database.  
     $sql="insert into service_providers (last_name,first_name,username,password,gender,phonenumber) VALUE ('$last_name','$first_name','$username','$password','$gender','$phonenumber')";  
+    
+        	//check if records added in table
+	if(mysqli_query($dbcon, $sql)){
+    echo"<script>alert('Registration Successful')</script>";
+	} else{
+		echo ("ERROR: Could not able to execute" . mysqli_error($dbcon));
+	}
       
    
 }  

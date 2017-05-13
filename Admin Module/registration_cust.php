@@ -38,7 +38,7 @@
                             </div>
 							
 							<div class="form-group">  
-                                <input class="form-control" placeholder="Contact Number" name="contactno" type="text" autofocus>  
+                                <input class="form-control" placeholder="Contact Number" name="contactno" type="number" autofocus>  
                             </div>
 							
 							<div class="form-group">
@@ -95,13 +95,13 @@ if(isset($_POST['registration_cust']))
 	$username=trim($_POST['username']);
 	$password=$_POST['password'];
 	$password2=$_POST['password2'];
+    $gender=$_POST['gender'];
 	
 	if ($password!=$password2)
  {
-     echo("Oops! Password did not match! Try again. ");
+     echo"<script>alert('Password did not match')</script>";
  }
  
-	$gender=$_POST['gender'];	
   
     if($last_name=='' || $first_name=='' || $address=='' || $email=='' || $contactno=='' || $bday=='' || $username==''
 		|| $password=='' || $password2==''|| $gender=='')  
@@ -122,7 +122,15 @@ if(isset($_POST['registration_cust']))
     }
 	
 	//insert the user into the database.  
-    $sql="insert into customers (last_name,first_name,address,email,contactno,bday,username,password,gender) VALUE ('$last_name','$first_name','$address','$email','$contactno','$bday','$username','$password','$gender')";  
+    $sql="insert into customers (last_name,first_name,address,email,contactno,bday,username,password,gender) VALUE ('$last_name','$first_name','$address','$email','$contactno','$bday','$username','$password','$gender')";
+    
+    	//check if records added in table
+	if(mysqli_query($dbcon, $sql)){
+    echo"<script>alert('Registration Successful')</script>";
+	} else{
+		echo ("ERROR: Could not able to execute" . mysqli_error($dbcon));
+	}
+	
      
    
 }  
