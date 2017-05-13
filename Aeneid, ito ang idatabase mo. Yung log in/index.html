@@ -54,14 +54,71 @@
 			<a class="page-scroll" href="profile.html">My Profile</a>
 			</li>
              <li>
-			<a class="page-scroll" href="#"><i class="fa fa-bell"></i></a>
-			</li>
-		</ul>
-	</div>
-	<!-- /.navbar-collapse -->
-</div>
-<!-- /.container -->
-</nav>
+                <div class="dropdown">
+                      <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+                        <i class="glyphicon glyphicon-bell"></i>
+                      </a>
+
+                      <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">
+
+                        <div class="notification-heading"><h4 class="menu-title">Notifications</h4><h4 class="menu-title pull-right">View all<i class="glyphicon glyphicon-circle-arrow-right"></i></h4>
+                        </div>
+                        <li class="divider"></li>
+                       <div class="notifications-wrapper">
+                         <a class="content" href="#">
+
+                           <div class="notification-item">
+                            <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
+                            <p class="item-info">Marketing 101, Video Assignment</p>
+                          </div>
+
+                        </a>
+                         <a class="content" href="#">
+                          <div class="notification-item">
+                            <h4 class="item-title">Evaluation Deadline 1 · day ago</h4>
+                            <p class="item-info">Marketing 101, Video Assignment</p>
+                          </div>
+                        </a>
+                         <a class="content" href="#">
+                          <div class="notification-item">
+                            <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+                            <p class="item-info">Marketing 101, Video Assignment</p>
+                          </div>
+                        </a>
+                         <a class="content" href="#">
+                          <div class="notification-item">
+                            <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+                            <p class="item-info">Marketing 101, Video Assignment</p>
+                          </div>
+
+                        </a>
+                         <a class="content" href="#">
+                          <div class="notification-item">
+                            <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+                            <p class="item-info">Marketing 101, Video Assignment</p>
+                          </div>
+                        </a>
+                         <a class="content" href="#">
+                          <div class="notification-item">
+                            <h4 class="item-title">Evaluation Deadline 1 • day ago</h4>
+                            <p class="item-info">Marketing 101, Video Assignment</p>
+                          </div>
+                        </a>
+
+                       </div>
+                        <li class="divider"></li>
+                        <div class="notification-footer"><h4 class="menu-title">View all<i class="glyphicon glyphicon-circle-arrow-right"></i></h4></div>
+                      </ul>
+
+                    </div>
+                  </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container -->
+                </nav>
 <!-- Section Services
 ================================================== -->
 <section id="services">
@@ -222,12 +279,7 @@
             <h4 class="modal-title">Facial Services</h4>
         </div>
         <div class="modal-body">
-          We have a wide variety of hair services. Ranging from haircuts from skilled and trained professionals ready to cut your hair. 
- +They have attention to your hair texture and are well trained, passionate, and certified, so you don't have to worry about any problems. 
- +Just sit back, relax, and experience the expertise. Chemists and Hair experts also provide advice and consultation for your hair coloring and hair shape.
- +Products imported from world class brands will be provided with our approachable service crew, who will be ready to help you out! 
-
-
+          We have a wide variety of hair services. Ranging from haircuts from skilled and trained professionals ready to cut your hair. They have attention to your hair texture and are well trained, passionate, and certified, so you don't have to worry about any problems. Just sit back, relax, and experience the expertise. Chemists and Hair experts also provide advice and consultation for your hair coloring and hair shape.Products imported from world class brands will be provided with our approachable service crew, who will be ready to help you out!
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -478,6 +530,8 @@ We also aspire to achieve, though ratings and forums, improved customer service,
 <div class="clearfix">
 </div>
 
+    
+    <!-- Booking -->
 <section id="contact">
 <div class="container">
 <div class="row">
@@ -499,13 +553,33 @@ We also aspire to achieve, though ratings and forums, improved customer service,
 				<input name="email" type="email" class="col-md-6" placeholder="Service Provider *">
 				<textarea name="comment" class="col-md-12" placeholder="Additional Information* "></textarea>
                 <form action="/action_page.php">Date
-                    <input type="date" name="reserve"></form>
-				<input type="submit" id="submit" class="contact submit btn btn-primary btn-xl" value="Send request">
-			</form>
-		</div>
-	</div>
-</div>
-</div>
+                <input type="date" name="reserve"></form>
+                <div class="btn btn-primary btn-lg" data-animation="animated zoomInRight" data-toggle="modal" data-target="#myModal">Send Request</div>
+                </div>
+
+        <!-- Modal -->
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <p>Thank you.Your request has been sent!</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+            </div>
+          </div>
+        </form>
 </section>
 
 <!-- Section Footer
