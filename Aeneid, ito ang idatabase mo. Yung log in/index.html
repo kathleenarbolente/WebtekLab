@@ -454,28 +454,12 @@ We also aspire to achieve, though ratings and forums, improved customer service,
 				<textarea name="comment" class="col-md-12" placeholder="Additional Information* "></textarea>
                 <form action="/action_page.php">Schedule
                 <input type="date" name="reserve"></form>
-                <div class="btn btn-primary btn-lg" data-animation="animated zoomInRight" data-toggle="modal" data-target="#myModal">Send Request</div>
+                <div class="btn btn-primary btn-lg" data-animation="animated zoomInRight" data-toggle="alert" data-target="#alert">Send Request</div>
                 </div>
-
-        <!-- Modal -->
-          <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                  <p>Thank you.Your request has been sent!</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-
-            </div>
-          </div>
+             <div class="alert">
+                      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                     Your message has been sent. <strong>Thank you!</strong> 
+                    </div>
 
             </div>
           </div>
