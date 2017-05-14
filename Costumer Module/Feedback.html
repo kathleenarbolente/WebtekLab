@@ -63,7 +63,7 @@ function show(shown, hidden) {
   <header id="portfolio">
     <div class="w3-container">
     <center><h3 style="margin-top:100px;margin-bottom:50px;color:black;">We appreciate you for taking a look at our offered services. Should you wish to book one of our services or order a product we would appreciate it if you leave a feedback. This would serve as a way for us to better improve our site.</h3></center>
-    <button type="submit" onclick="return show('feedbackform','feedoption');" style="margin-top:30px;">Give Feedback</button>
+    <button type="submit" onclick="return show('feedbackform','feedoption');" style="margin-top:30px;color:black;">Give Feedback</button>
     </div>
   </header>
   <center style="float:bottom;margin-top:45%;">
@@ -116,42 +116,45 @@ function show(shown, hidden) {
             </div>
           </header>
           <hr>
-          <h4 style="text-align:center"><b>This feedback is a:</b> <input style="margin-left:10%;" type="checkbox">Suggestion<input style="margin-left:10%;" type="checkbox">Compliment<input style="margin-left:10%;" type="checkbox">Complaint</h4>
+          <h4 style="text-align:center"><b>This feedback is a:</b> <input id="suggestion" style="margin-left:10%;" type="checkbox">Suggestion<input id="compliment" style="margin-left:10%;" type="checkbox">Compliment<input id="complaint" style="margin-left:10%;" type="checkbox">Complaint</h4>
           <hr>
           <div style="float:center;margin-top:50px;">
-              <h4 style="margin-left:10%;"><b>About which services?</b></h4>
+              <h4 id="service" style="margin-left:10%;"><b>About which services?</b></h4>
               <h4>
-                <input style="margin-left:10%;" type="checkbox">Online Page<br><br>
-                <input style="margin-left:10%;" type="checkbox">Ordering system<br><br>
-                <input style="margin-left:10%;" type="checkbox">Service Offered<br><br>
-                <input style="margin-left:10%;" type="checkbox">Payment Options<br><br>
-                <input style="margin-left:10%;" type="checkbox">Our Licences<br><br>
-                <input style="margin-left:10%;" type="checkbox">Business Handling<br><br>
-                <input style="margin-left:10%;" type="checkbox">   <label><b>Other:</b></label>
-                <input type="text" placeholder="Your topic of concern" name="otherservices" required>
+                <input id="olpage" style="margin-left:10%;" type="checkbox" name="servicechoice">Online Page<br><br>
+                <input id="ordersys" style="margin-left:10%;" type="checkbox" name="servicechoice">Ordering system<br><br>
+                <input id="servoffer" style="margin-left:10%;" type="checkbox" name="servicechoice">Service Offered<br><br>
+                <input id="paymentopt" style="margin-left:10%;" type="checkbox" name="servicechoice">Payment Options<br><br>
+                <input id="licences" style="margin-left:10%;" type="checkbox" name="servicechoice">Our Licences<br><br>
+                <input id="business" style="margin-left:10%;" type="checkbox" name="servicechoice">Business Handling<br><br>
+                <input id="otherserv" style="margin-left:10%;" type="checkbox" name="servicechoice">   <label><b>Other:</b></label>
+                <input type="text" placeholder="Your topic of concern" name="servicechoice" required>
               </h4>
           </div>
           
           <div style="float:center;margin-top:50px;">
               <hr>
-              <h4 style="margin-left:10%;margin-top:30px;"><b>About which issue?</b></h4>
+              <h4 id="issue" style="margin-left:10%;margin-top:30px;"><b>About which issue?</b></h4>
               <h4>
-                <input style="margin-left:10%;" type="checkbox">Item condition<br><br>
-                <input style="margin-left:10%;" type="checkbox">Rendered service<br><br>
-                <input style="margin-left:10%;" type="checkbox">Staff interaction<br><br>
-                <input style="margin-left:10%;" type="checkbox">Customer Service<br><br>
-                <input style="margin-left:10%;" type="checkbox">Accessibility of service<br><br>
-                <input style="margin-left:10%;" type="checkbox">Fees/Charges/Refunds<br><br>
-                <input style="margin-left:10%;" type="checkbox">Website<br><br>
-                <input style="margin-left:10%;" type="checkbox">   <label><b>Other:</b></label>
+                <input id="itemcond" style="margin-left:10%;" type="checkbox">Item condition<br><br>
+                <input id="renderserv" style="margin-left:10%;" type="checkbox">Rendered service<br><br>
+                <input id="staffint" style="margin-left:10%;" type="checkbox">Staff interaction<br><br>
+                <input id="custserv" style="margin-left:10%;" type="checkbox">Customer Service<br><br>
+                <input id="accesibility" style="margin-left:10%;" type="checkbox">Accessibility of service<br><br>
+                <input id="fees" style="margin-left:10%;" type="checkbox">Fees/Charges/Refunds<br><br>
+                <input id="website" style="margin-left:10%;" type="checkbox">Website<br><br>
+                <input id="otherissue" style="margin-left:10%;" type="checkbox">   <label><b>Other:</b></label>
                 <input type="text" placeholder="Your topic of concern" name="otherissue" required>
               </h4>
           </div>
           
           <div style="float:center;margin-top:50px;">
             <hr>
-              <h4 style="margin-left:10%;margin-top:30px;"><b>Please write the details of your feedback here:</b></h4>
-                <textarea name="comment" class="col-md-12" placeholder="Write your feedback here. Your concerns are important to us" style="margin-bottom:200px;height:150px"></textarea>
+              <h4 id="feedbackcontent" style="margin-left:10%;margin-top:30px;"><b>Please write the details of your feedback here:</b></h4>
+                <textarea id="feedbacktext" name="comment" class="col-md-12" placeholder="Write your feedback here. Your concerns are important to us" style="height:150px"></textarea><br>
+                <center>
+                <button style="margin-bottom:150px;margin-top:20px;" id="submitbutton" type="submit">Submit</button>
+                </center>
           </div>
           <center>
             <h1 class="bottombrand wow flipInX">iClickServices</h1>
