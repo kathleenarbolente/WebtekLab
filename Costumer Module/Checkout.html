@@ -61,7 +61,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   <!-- Header -->
   <header id="portfolio">
     <div class="w3-container">
-    <h1 id="checkout"><b style="color:black;">Method Of Payment</b></h1>
+    <h1 id="checko" style="color:black;text-align:left;"><b>Method of Payment</b></h1>
     <center><h3 style="margin-top:50px;margin-bottom:50px;color:black;">Please choose from the following method of payments.</h3></center>
     </div>
   </header>
@@ -99,14 +99,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <h1 id="validate"><b>Validate Payment Method</b></h1>
     </div>
     <center>
-    <div style="margin-top:50px;margin-bottom:50px;">
-    <h3>This is to verify that you are using your account. We require you to input your <b>password</b>.</h3>    
+    <div style="margin-top:50px;">
+    <h3>In iClickSalon we ensure the absolute secrecy of your <b>private information</b>.</h3>   
     </div>
-    <div class="container">
-      <label><b>Password:</b></label>
-      <input id="passvalue" type="password" placeholder="Enter Password" name="passw" required>
-        
-      <button id="verifybutton" type="submit">Verify</button>
+    <div>
+    <img src="img/demo/cardsamp.jpg">
+    </div>
+    <div style="padding-top:20px;padding-bottom:10px;">
+    <h4>Card Number:</h4><input id="cardnumber" type="number" name="cardnum" required><br>
+    </div>
+    <div style="padding-bottom:10px;">
+    <h4>Exp Date:</h4><input type="date" name="carddate"><br>
+    </div>
+    <div style="margin-bottom:50px;">
+    <h4>CVC/CSC:</h4><input id="cvv" type="password" placeholder="****" name="cvv" required><br> 
     </div>
     </center>
     
