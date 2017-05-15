@@ -59,7 +59,7 @@ p {
 	color:rgba(255,255,255,.7) !Important;
 }
 
-input[type=text] {
+.customSPin > input[type=text] {
     width: 130px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -69,8 +69,7 @@ input[type=text] {
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+ 
 }
 input[type=text]:focus {
     width: 100%;
@@ -1275,3 +1274,7 @@ tr:nth-child(even){background-color: lightcyan}
     }
 
     .close:hover { background: #00d9ff; }
+
+    .customSPin {
+
+    }
