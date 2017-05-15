@@ -45,13 +45,16 @@
 			<a class="page-scroll" href="#dashboard">Dashboard</a>
 			</li>
 			<li>
-			<a class="page-scroll" href="#request">Request</a>
+			<a class="page-scroll" href="#request">Transactions</a>
 			</li>
 			<li>
 			<a class="page-scroll" href="#client">Client</a>
 			</li>
             <li>
 			<a class="page-scroll" href="#service">Service Provider</a>
+			</li>
+			<li>
+			<a href="logout.php">Logout</a>
 			</li>
 		</ul>
 	</div>
@@ -68,20 +71,15 @@
 		<h2 class="section-heading">WELCOME ADMIN!</h2>
 		<hr class="primary">
 	</div>
-</div>
-</div>
-    
-<!-- /.carousel -->
-
-<!-- Section About
-================================================== -->
-<section id="request">
-<div class="container">
 	<div class="row">
-		<div class="col-lg-10 col-lg-offset-1 text-center">
-			<h2 class="section-heading">WHAT WE STAND FOR<br/>& OUR <b>PRINCIPLES</b></h2>
-			<hr>
-            <ul>
+		<div class="table-scrol">  
+		<div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
+		
+	   
+        </div>  
+	</div> 
+			<h2 class="section-heading" align="center">WHAT WE STAND FOR<br/>& OUR <b>PRINCIPLES</b></h2>
+
 			<p>
 				Our mission is to provide quality beauty products, services and goods. 
 To make deliveries arrive as soon as possible for our beloved customers.
@@ -98,8 +96,63 @@ forefront of future quality customer service through online capabilities,
 with its aim to execute tasks in a timely manner.
 We also aspire to achieve, though ratings and forums, improved customer service, by which if standards are not met, should set improvements.
 
-                </p>
-                
+                </p>	
+	</div>
+</div>
+</div>
+    
+<!-- /.carousel -->
+
+<!-- Section About
+================================================== -->
+<section id="request">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1 text-center">
+
+				<h1 align="center">Transactions</h1>
+             	<table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
+				<thead>   
+		  
+				<tr>
+					<th>Service Provider</th>
+					<th>Customer</th>  			
+					<th>Address</th>  
+					<th>Service Availed</th>
+					<th>Status</th>
+					<th>Remarks</th>
+				</tr>  
+				</thead>  
+		  
+				<?php  
+					include("database/db_conection.php");  
+					$view_salon_query="select * from requests";//select query for viewing users.
+					$run=mysqli_query($dbcon,$view_salon_query);//here run the sql query.  
+			  
+					while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
+					{  
+						$request_id=$row[0];  
+						$spname=$row[1];
+						$custname=$row[2];			
+						$address=$row[3];  
+						$serviceAvailed=$row[4];
+						$status=$row[5];
+						$remarks=$row[6];
+
+				?>  
+		  
+				<tr>     
+					<td><?php echo $spname;  ?></td>   
+					<td><?php echo $custname;  ?></td>
+					<td><?php echo $address;  ?></td>
+					<td><?php echo $serviceAvailed;  ?></td> 
+					<td><?php echo $status;  ?></td> 
+					<td><?php echo $remarks;  ?></td> 
+				</tr>  
+		  
+				<?php } ?>  
+		  
+			</table>    
 	</div>
 </div>
 </div>
@@ -114,7 +167,7 @@ We also aspire to achieve, though ratings and forums, improved customer service,
 <div class="container">
 <div class="row">
 		<div class="table-scrol">  
-		<h1 align="center">All the Users</h1>  
+		<h1 align="center">Customers</h1>
 	  
 		<div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
 	  
@@ -123,56 +176,67 @@ We also aspire to achieve, though ratings and forums, improved customer service,
 				<thead>   
 		  
 				<tr>
-					<th>Customer Id</th>  
+					<th>First Name</th>					
 					<th>Last Name</th>
-					<th>First Name</th> 			
-					<th>Address</th>  
-					<th>E-mail</th>  
-					<th>Contact Number</th>
-					<th>Birthday</th>
 					<th>Username</th>
 					<th>Password</th>
-					<th>Gender</th>
+					<th>Gender</th>					
+					<th>Address</th> 
+					<th>E-mail</th>
+					<th>Country</th>							
+					<th>Mobile Number</th>
 					<th>Action</th>
+					<th>Status</th>
 				</tr>  
 				</thead>  
 		  
 				<?php  
 					include("database/db_conection.php");  
-					$view_salon_query="select * from customers";//select query for viewing users.  
+					$view_salon_query="select * from accounts";//select query for viewing users.
 					$run=mysqli_query($dbcon,$view_salon_query);//here run the sql query.  
 			  
 					while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
 					{  
-						$cust_id=$row[0];  
-						$last_name=$row[1];
-						$first_name=$row[2];
-						$address=$row[3];			
-						$email=$row[4];  
-						$contactno=$row[5];
-						$birthday=$row[6]; 
-						$username=$row[7]; 
-						$password=$row[8]; 
-						$gender=$row[9];
+
+						$customer_id=$row[0];
+						$customer_id=$row['customer_id'];
+						$first_name=$row[1];						
+						$last_name=$row[2];
+						$username=$row[3];
+						$password=$row[4]; 
+						$gender=$row[5];
+						$address=$row[6];
+						$email=$row[7]; 
+						$country=$row[8];
+						$mobile_number=$row[9]; 
+						$status=$row[10];
 				?>  
 		  
 				<tr>  
 		<!--here showing results in the table -->  
-					<td><?php echo $cust_id;  ?></td>  
-					<td><?php echo $last_name;  ?></td>  
-					<td><?php echo $first_name;  ?></td>  
-					<td><?php echo $address;  ?></td>
-					<td><?php echo $email;  ?></td> 
-					<td><?php echo $contactno;  ?></td> 
-					<td><?php echo $birthday;  ?></td> 
+
+					<td><?php echo $first_name;  ?></td>
+					<td><?php echo $last_name;  ?></td>    
 					<td><?php echo $username;  ?></td> 
 					<td><?php echo $password;  ?></td> 
-					<td><?php echo $gender;  ?></td> 
-					<td><a href="delete_client.php?del=<?php echo $cust_id ?>"><button class="btn btn-danger">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
-				</tr>  
-		  
-				<?php } ?>  
-		  
+					<td><?php echo $gender;  ?></td>
+					<td><?php echo $address;  ?></td>
+					<td><?php echo $email;  ?></td> 
+					<td><?php echo $country;  ?></td>
+					<td><?php echo $mobile_number;  ?></td>  
+					<td><a href="delete_client.php?del=<?php echo $customer_id ?>"><button class="btn btn-danger">Delete</button></a></td>
+					
+					<td><?php if(($status)=='0') { ?>
+					<a href="status.php?status=<?php echo $row['customer_id'];?>" onclick="return confirm('Really you activate <?php echo $username?>');">
+					<img src="images/red.png" id="view" width="16" height="16" alt="" />Deactivated </a>
+					
+					<?php } if(($status)=='1') { ?>
+					<a href="status.php?status=<?php echo $row['customer_id'];?>" onclick="return confirm('Really you De-activate <?php echo $username?>');">
+					<img src="images/green.png" width="16" id="view" height="16" alt="" />Activated</a>
+					<?php } ?></td>
+
+				<?php } ?>	
+		
 			</table>  
         </div>  
 	</div>  
@@ -185,7 +249,7 @@ We also aspire to achieve, though ratings and forums, improved customer service,
 <div class="container">
 <div class="row">
 		<div class="table-scrol">  
-		<h1 align="center">All the Users</h1>  
+		<h1 align="center">Service Providers</h1>
 	  
 		<div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
 	  
@@ -193,8 +257,7 @@ We also aspire to achieve, though ratings and forums, improved customer service,
 		<table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
 				<thead>  
 		  
-				<tr>
-					<th>S.P Id</th>  
+				<tr> 
 					<th>Last Name</th>
 					<th>First Name</th> 			
 					<th>Username</th>  
@@ -202,6 +265,8 @@ We also aspire to achieve, though ratings and forums, improved customer service,
 					<th>Gender</th>
 					<th>Phone Number</th>
 					<th>Action</th>
+					<th>Status</th>
+					
 				</tr>  
 				</thead>  
 		  
@@ -212,18 +277,20 @@ We also aspire to achieve, though ratings and forums, improved customer service,
 			  
 					while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
 					{  
-						$serv_id=$row[0];  
+						$serv_id=$row[0]; 
+						$serv_id=$row['serv_id'];						
 						$last_name=$row[1];
 						$first_name=$row[2];
 						$username=$row[3];			 
 						$password=$row[4]; 
 						$gender=$row[5];
 						$phonenumber=$row[6];
+						$status=$row[7];
+						
 				?>  
 		  
 				<tr>  
 		<!--here showing results in the table -->  
-					<td><?php echo $serv_id;  ?></td>  
 					<td><?php echo $last_name;  ?></td>  
 					<td><?php echo $first_name;  ?></td>  
 					<td><?php echo $username;  ?></td>
@@ -231,9 +298,19 @@ We also aspire to achieve, though ratings and forums, improved customer service,
 					<td><?php echo $gender;  ?></td>  
 					<td><?php echo $phonenumber;  ?></td> 
 					<td><a href="delete_sp.php?del=<?php echo $serv_id ?>"><button class="btn btn-danger">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
+					
+					<td><?php if(($status)=='0') { ?>
+					<a href="status_sp.php?status=<?php echo $row['serv_id'];?>" onclick="return confirm('Really you activate <?php echo $username?>');">
+					<img src="images/red.png" id="view" width="16" height="16" alt="" />Deactivated </a>
+					
+					<?php } if(($status)=='1') { ?>
+					<a href="status_sp.php?status=<?php echo $row['serv_id'];?>" onclick="return confirm('Really you De-activate <?php echo $username?>');">
+					<img src="images/green.png" width="16" id="view" height="16" alt="" />Activated</a>
+					<?php } ?></td>
+					
 				</tr>  
 		  
-				<?php } ?>  
+				<?php } ?>
 		  
 			</table>  
         </div>  

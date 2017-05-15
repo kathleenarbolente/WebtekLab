@@ -69,7 +69,7 @@ if(isset($_POST['login']))
     $password=$_POST['password'];  
 	  
 
-    $customers_query="select * from customers WHERE username='$username' AND password='$password'"; 
+    $customers_query="select * from accounts WHERE username='$username' AND password='$password'";
 	$sp_query="select * from service_providers WHERE username='$username' AND password='$password'";	
   
     $run_query=mysqli_query($dbcon,$customers_query);  

@@ -37,11 +37,6 @@
                                 <input class="form-control" placeholder="Password" name="password" type="password" autofocus>  
                             </div>
 							
-							<div class="form-group">  
-                                <input class="form-control" placeholder="Confirm Password" name="password2" type="password" autofocus>  
-                            </div>
-								
-							
 							<div class="form-group"> 
 							  <input class="form-control" placeholder="Gender" list="gender" name="gender" autofocus>
 							  <datalist id="gender">
@@ -51,7 +46,7 @@
 							</div>
 							
 							<div class="form-group">  
-                                <input class="form-control" placeholder="Contact Number" name="phonenumber" type="text" autofocus>  
+                                <input class="form-control" placeholder="Contact Number" name="mobilenumber" type="text" autofocus>  
                             </div>
 							
                             <input class="btn btn-lg btn-success btn-block" type="submit" value="register" name="registration_sp" ></input>  
@@ -79,18 +74,9 @@ if(isset($_POST['registration_sp']))
 	$first_name=$_POST['first_name'];
 	$username=trim($_POST['username']);
 	$password=$_POST['password'];
-	$password2=$_POST['password2'];
-	$phonenumber=trim($_POST['phonenumber']);
-
-	
-	if ($password!=$password2)
-     {
-         echo"<script>alert('Password did not match')</script>";
-     }
- 
-	$gender=$_POST['gender'];	
-  
-    if($last_name=='' || $first_name=='' || $username=='' || $password=='' || $password2=='' || $gender=='' || $phonenumber=='')  
+	$mobilenumber=trim($_POST['mobilenumber']);
+	$gender=$_POST['gender'];
+    if($last_name=='' || $first_name=='' || $username=='' || $password=='' || $gender=='' || $mobilenumber=='')  
     {  
         //javascript use for input checking
 		echo"<script>alert('Make sure to fill all input')</script>";		 
@@ -108,7 +94,7 @@ if(isset($_POST['registration_sp']))
     }
 	
 	//insert the user into the database.  
-    $sql="insert into service_providers (last_name,first_name,username,password,gender,phonenumber) VALUE ('$last_name','$first_name','$username','$password','$gender','$phonenumber')";  
+    $sql="insert into service_providers (last_name,first_name,username,password,gender,mobilenumber) VALUE ('$last_name','$first_name','$username','$password','$gender','$mobilenumber')";
     
         	//check if records added in table
 	if(mysqli_query($dbcon, $sql)){

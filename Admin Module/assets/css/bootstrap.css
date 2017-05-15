@@ -2854,6 +2854,8 @@ fieldset[disabled] .btn-primary.active {
   color: #fff;
   background-color: #5cb85c;
   border-color: #4cae4c;
+  height:10px !important;
+  width:10px !important;
 }
 .btn-success:hover,
 .btn-success:focus,
