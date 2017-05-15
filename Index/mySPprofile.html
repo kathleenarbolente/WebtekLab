@@ -26,8 +26,6 @@ integrity="sha384-Wrgq82RsEean5tP3NK3zWAemiNEXofJsTwTyHmNb/iL3dP/sZJ4+7sOld1uqYJ
 </head>
     
 <body>
-<legend data-animation="animated bounceInUp" class="topmain">My Profile</legend></h3>
-
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
 <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -45,11 +43,9 @@ integrity="sha384-Wrgq82RsEean5tP3NK3zWAemiNEXofJsTwTyHmNb/iL3dP/sZJ4+7sOld1uqYJ
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
             <li>
-            <a class="page-scroll" href="SPindex.html">Home</a>
+            <a class="page-scroll" href="Request.html">Requests</a>
             </li>
             <li>
-            <a class="page-scroll" href="#transactions">Transactions</a>
-            </li>
             <li>
             <a class="page-scroll" href="#tline">Feedback</a>
             </li>
@@ -64,7 +60,7 @@ integrity="sha384-Wrgq82RsEean5tP3NK3zWAemiNEXofJsTwTyHmNb/iL3dP/sZJ4+7sOld1uqYJ
 
                       <ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">
 
-                        <div class="notification-heading"><h4 class="menu-title">Notifications</h4><h4 class="menu-title pull-right">View all<i class="glyphicon glyphicon-circle-arrow-right"></i></h4>
+                        <div class="notification-heading"><h4 class="menu-title">Notifications</h4>
                         </div>
                         <li class="divider"></li>
                        <div class="notifications-wrapper">
@@ -110,7 +106,7 @@ integrity="sha384-Wrgq82RsEean5tP3NK3zWAemiNEXofJsTwTyHmNb/iL3dP/sZJ4+7sOld1uqYJ
 
                        </div>
                         <li class="divider"></li>
-                        <div class="notification-footer"><h4 class="menu-title">View all<i class="glyphicon glyphicon-circle-arrow-right"></i></h4></div>
+                        <div class="notification-footer"><h4 class="menu-title"><a href="Request.html">View all</a><i class="glyphicon glyphicon-circle-arrow-right"></i></h4></div>
                       </ul>
 
                     </div>
@@ -133,7 +129,6 @@ integrity="sha384-Wrgq82RsEean5tP3NK3zWAemiNEXofJsTwTyHmNb/iL3dP/sZJ4+7sOld1uqYJ
 
         </div>
         <!--col-md-4 col-sm-4 col-xs-12 close-->
-
         <div class="col-md-5 col-sm-5 col-xs-12">
             <h5>Vijayan Karuppaiah</h5> <br>
             <ul>
@@ -149,9 +144,7 @@ integrity="sha384-Wrgq82RsEean5tP3NK3zWAemiNEXofJsTwTyHmNb/iL3dP/sZJ4+7sOld1uqYJ
 </div>
 <!--container close-->
 </section>
-<br/>
-<br/>
-
+<hr>
 <div class="contain">
     <div class="col-sm-8">
         <div data-spy="scroll" class="tabbable-panel">
@@ -209,135 +202,63 @@ integrity="sha384-Wrgq82RsEean5tP3NK3zWAemiNEXofJsTwTyHmNb/iL3dP/sZJ4+7sOld1uqYJ
     </div>
 </div>
 
-<!-- Section Transactions
+<!-- Section Intro Slider
 ================================================== -->
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-10 col-lg-offset-1 text-center" id="transactions">
-            <h2 class="section-heading">MY <b>TRANSACTIONS</b></h2>             
+<div id="carousel-example-generic" class="carousel intro slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <!-- First slide -->
+        <div class="item active" style="background-image:url(img/demo/hair.jpg)">
+            <div class="carousel-caption">
+                <h2 data-animation="animated bounceInDown">
+                Achieve the look you want </h2>
+                <h1 data-animation="animated bounceInUp">
+                Making you and your hair shine.</h1>
+    
+            </div>
         </div>
-</div>
-</div>
+        <!-- /.item -->
+        <!-- Second slide -->
+        <div class="item" style="background-image:url(img/demo/facial.jpg)">
+            <div class="carousel-caption">
+                <h2 data-animation="animated zoomInLeft">
+                Wist. Glide. Shine.</h2>
+                <h1 data-animation="animated zoomInRight">
+                For that feminine look you always wanted</h1>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="alert alert-success" style="display:none;">
-                <span class="glyphicon glyphicon-ok"></span> Drag table row and cange Order</div>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>
-                            Client
-                        </th>
-                        <th>
-                            Service
-                        </th>
-                        <th>
-                            Address
-                        </th>
-                        <th>
-                            Schedule
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="alt">
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                    </tr>
-                    <tr class="alt">
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                    </tr>
-                    <tr class="alt">
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                        <td>
-                            Column content
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            </div>
         </div>
+        <!-- /.item -->
+        <!-- Third slide -->
+        <div class="item" style="background-image:url(img/demo/nailshere.jpg)">
+            <div class="carousel-caption">
+                <h2 data-animation="animated bounceInLeft">
+                Clean. Chic. Creative.</h2>
+                <h1 data-animation="animated bounceInRight">
+                Shine from Hand to Toe</h1>
+                
+            </div>
+        </div>
+        <!-- /.item -->
     </div>
+    <!-- /.carousel-inner -->
+    <!-- Controls (currently displayed none from style.css)-->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+    </a>
 </div>
-
-
-<div class="clearfix">
-</div>
-</section>
-
+<!-- /.carousel -->
 <!-- Section Timeline
 ================================================== -->
 <section id="tline">
