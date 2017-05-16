@@ -74,6 +74,7 @@ if(isset($_POST['admin_login']))//this will tell us what to do if some data has 
     {  
   
         echo "<script>window.open('index.php','_self')</script>"; 
+		$_SESSION['username']=$username;
     }  
     else {echo"<script>alert('Admin Details are incorrect..!')</script>";}  
   
