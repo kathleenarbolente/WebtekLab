@@ -36,9 +36,10 @@ p {
 	margin-bottom:20px;
 }
 .btn {
-		padding:16px 30px;
+		padding:16px 20px;
 	margin-top:15px;
 }
+	
 .bg-primary {
 	background-color:#f05f40;
 }
@@ -59,7 +60,7 @@ p {
 	color:rgba(255,255,255,.7) !Important;
 }
 
-input[type=text] {
+.customSPin > input[type=text] {
     width: 130px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -69,8 +70,7 @@ input[type=text] {
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+ 
 }
 input[type=text]:focus {
     width: 100%;
@@ -216,7 +216,6 @@ header .header-content .header-content-inner p {
 	color: #f05f40;
 	font-family: 'Raleway';
 	font-size: 3em;
-}
 }
 .service-box {
 	margin:50px auto 0;
