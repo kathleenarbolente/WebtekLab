@@ -358,7 +358,7 @@
   
                         </fieldset>  
                     </form>  
-                    <center><b>Already registered ?</b> <br></b><a href="login.php">Login here</a></center><!--for centered text-->  
+                    <center><b>Already registered ?</b> <br></b><a href="sp_login.php">Login here</a></center><!--for centered text-->  
                 </div>  
             </div>  
         </div>  
