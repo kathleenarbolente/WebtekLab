@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Yesteryear');
+
+html,body {
+	width:100%;
+	height:100%;
+}
+
+body {
+	background-color: lightgray;
+}
+
+.topmain {
+	text-align: center;
+	color: #f05f40;
+	font-family: 'Yesteryear';
+	font-size: 3em;
+}
+
+.create {
+	text-align: center;
+	color: white;
+	font-family: 'Quicksand';
+	font-size: 1.5em;
+}
+
+#submit {
+	background-color: #f05f40;
+}

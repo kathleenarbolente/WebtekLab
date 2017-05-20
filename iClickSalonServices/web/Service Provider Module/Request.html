@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Service Requests</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/icon.css" type="text/css">
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<!-- Custom Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Mrs+Sheppards%7CDosis:300,400,700%7COpen+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800;' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+<!-- Plugin CSS -->
+<link rel="stylesheet" href="css/animate.min.css" type="text/css">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" type="image/png" href="img\demo\logo.png">
+
+  
+  <style>
+
+.btn-group .pindot {
+    background-color: #FF5353; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+}
+.btn-group .pindot:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+.btn-group .pindot:hover {
+    background-color: #FFB5B5;
+}
+
+  </style>
+</head>
+<body>
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand page-scroll" href="#page-top"><img src="" alt=""></a>
+    </div>
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+            <a class="page-scroll" href="#request">Requests</a>
+            </li>
+            <li>
+            <a class="page-scroll" href="#transactions">Transactions</a>
+            </li>
+            <li>
+            <a class="page-scroll" href="mySPprofile.html">My Profile</a>
+            </li>
+             <li>
+                 <a href="logout.php">logout</a>
+             </li>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container -->
+                </nav>
+
+<!-- Request -->
+<br/>
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 text-center" id="request">
+  <h2 class="section-heading">CLIENT <b>REQUEST</b></h2>  
+  </div>
+  </div>          
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>Address</th>
+        <th>Contact Info.</th>
+        <th>Appointment</th>
+        <th>Service Availed</th>
+        <th>Service Specification</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Jane Doe</th>
+        <th>Aurora Hill</th>
+        <th>09153821592</th>
+        <th>May 20, 2017 8:00AM</th>
+        <th>Facial</th>
+        <th>Facial masks and removal of whiteheads po pls huhu</th>
+        <th>
+          <a href="profile.html" onclick="okay()" data-original-title="Cancel" data-toggle="tooltip" type="button" class="pindot btn btn-primary btn-success"><i class="glyphicon glyphicon-ok"></i></a>
+
+
+          <a href="profile.html" onclick="decline()" data-original-title="Cancel" data-toggle="tooltip" type="button" class="pindot btn btn-primary btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+        </th>
+      </tr>
+      <tr>
+        <th>Jane Doe</th>
+        <th>Aurora Hill</th>
+        <th>09153821592</th>
+        <th>May 20, 2017 8:00AM</th>
+        <th>Facial</th>
+        <th>Facial masks and removal of whiteheads po pls huhu</th>
+        <th>
+          <a href="profile.html" onclick="okay()" data-original-title="Cancel" data-toggle="tooltip" type="button" class="pindot btn btn-primary btn-success"><i class="glyphicon glyphicon-ok"></i></a>
+
+
+          <a href="profile.html" onclick="decline()" data-original-title="Cancel" data-toggle="tooltip" type="button" class="pindot btn btn-primary btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+        </th>
+      </tr>
+      <tr>
+        <th>Jane Doe</th>
+        <th>Aurora Hill</th>
+        <th>09153821592</th>
+        <th>May 20, 2017 8:00AM</th>
+        <th>Facial</th>
+        <th>Facial masks and removal of whiteheads po pls huhu</th>
+        <th>
+          <a href="profile.html" onclick="okay()" data-original-title="Cancel" data-toggle="tooltip" type="button" class="pindot btn btn-primary btn-success"><i class="glyphicon glyphicon-ok"></i></a>
+
+
+          <a href="profile.html" onclick="decline()" data-original-title="Cancel" data-toggle="tooltip" type="button" class="pindot btn btn-primary btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Section Transactions
+================================================== -->
+<br/>
+<br?
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 text-center" id="transactions">
+            <h2 class="section-heading">MY <b>TRANSACTIONS</b></h2>             
+        </div>
+</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-success" style="display:none;">
+                <span class="glyphicon glyphicon-ok"></span> Drag table row and cange Order</div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Client
+                        </th>
+                        <th>
+                            Service
+                        </th>
+                        <th>
+                            Address
+                        </th>
+                        <th>
+                            Schedule
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="alt">
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                    </tr>
+                    <tr class="alt">
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                    </tr>
+                    <tr class="alt">
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                        <td>
+                            Column content
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="clearfix">
+</div>
+</section>
+<!-- Section Footer
+================================================== -->
+<section class="bg-dark">
+<div class="container">
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h1 class="bottombrand wow flipInX">iClick</h1>
+        <p>
+            &copy; 2017 
+        </p>
+    </div>
+</div>
+</div>
+</section>
+
+<script>
+
+function accept() {
+  var texta;
+  var q = confirm("You have accepted a client request.");
+  if (q == true) {
+    texta = "You have declined a client request."
+  }
+  document.getElementById("index").innerHTML = texta;
+}
+
+function decline() {
+  var textd;
+  var w = confirm("You have declined a client request.");
+  if (w == true) {
+    textd = "You have declined a client request."
+  }
+  document.getElementById("index").innerHTML = textd;
+}
+
+</script>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/parallax.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/countto.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/common.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
