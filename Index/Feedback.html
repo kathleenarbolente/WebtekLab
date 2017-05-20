@@ -23,6 +23,18 @@ function show(shown, hidden) {
   document.getElementById(hidden).style.display='none';
   return false;
 }
+var comment = document.forms["vform"]["comment"];
+var text_error = document.getElementById("text_error");
+comment.addEventListener("blur", commentVerify,true);
+    
+function Validate(){
+    if(comment.value == ""){
+        username.style.border="1px solid red";
+        text_error.textContent = "Comment is required to clarify your case";
+        comment.focus();
+        return false;
+    }
+}
 </script>
 </head>
 <body class="w3-light-grey w3-content" style="max-width:1200px;background-image: url(img/demo/feedbackbg.jpg);background-repeat: repeat-x;background-attachment: fixed;background-size: cover;background-position: center;">
@@ -151,10 +163,13 @@ function show(shown, hidden) {
           <div style="float:center;margin-top:50px;">
             <hr>
               <h4 id="feedbackcontent" style="margin-left:10%;margin-top:30px;"><b>Please write the details of your feedback here:</b></h4>
-                <textarea id="feedbacktext" name="comment" class="col-md-12" placeholder="Write your feedback here. Your concerns are important to us" style="height:150px"></textarea><br>
+              <form method="post" action="feed.php" onsubmit="return Validate()" name ="vform">
+                <textarea id="feedbacktext" name="comment" class="col-md-12" placeholder="Write your feedback here. Your concerns are important to us" style="height:150px"></textarea>
+                <div id=text_error class="val_error"></div><br>
                 <center>
-                <button style="margin-bottom:150px;margin-top:20px;" id="submitbutton" type="submit">Submit</button>
+                <button style="margin-bottom:150px;margin-top:20px;" id="submitbutton" type="submit" name="register">Submit</button>
                 </center>
+              </form>
           </div>
           <center>
             <h1 class="bottombrand wow flipInX">iClickServices</h1>
