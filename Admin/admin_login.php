@@ -79,5 +79,6 @@ if(isset($_POST['admin_login']))//this will tell us what to do if some data has 
     else {echo"<script>alert('Admin Details are incorrect..!')</script>";}  
   
 }
+	
   
 ?>  

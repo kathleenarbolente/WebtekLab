@@ -44,8 +44,8 @@ session_start();//session starts here
                           <!--  <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a> -->  
                         </fieldset>  
                     </form> 
-					<center><b>Not yet registered? Register here</b> <br></b><a href="registration_cust.php">Customer</a></center>
-					<center><a href="registration_sp.php">Service Provider</a></center><!--for centered text--> 					
+					<center><b>Not yet registered?</b> <br><center>
+					<center><a href="registration_sp.php">Register here</a></center><!--for centered text--> 					
 					<center><br></b><a href="admin_login.php">Log in as Admin</a></center>
 				</div>  
             </div>  

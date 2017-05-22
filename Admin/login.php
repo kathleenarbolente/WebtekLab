@@ -43,7 +43,9 @@ session_start();//session starts here
                             <!-- Change this to a button or input when using this as a form -->  
                           <!--  <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a> -->  
                         </fieldset>  
-                    </form> 					
+                    </form>
+					<center><b>Not yet registered?</b> <br><center>
+					<center><a href="registration_cust.php">Register here</a></center> 					
 					<center><br></b><a href="admin_login.php">Log in as Admin</a></center>
 
 				</div>  
@@ -73,7 +75,7 @@ if(isset($_POST['login']))
   
     if(mysqli_num_rows($run_query)>0)  
     {  
-        header( 'Location: /iClickServices/web/Request.html' );  
+        header( 'Location: customer/index.html' );  
   
         $_SESSION['username']=$username;//here session is used and value of $username store in $_SESSION.  
     }  
