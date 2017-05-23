@@ -24,9 +24,8 @@ function show(shown, hidden) {
   return false;
 }
 </script>
-<link rel="shortcut icon" type="image/png" href="img\demo\logo.png">
 </head>
-<body class="w3-light-grey w3-content" style="max-width:1200px;background-image: url(img/demo/feedbackbg.jpg);background-repeat: repeat-x;background-attachment: fixed;background-size: cover;background-position: center;">
+<body class="w3-light-grey w3-content" style="background-image: url(img/demo/feedbackbg.jpg);background-repeat: repeat-x;background-attachment: fixed;background-size: cover;background-position: center;">
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
@@ -75,7 +74,8 @@ function show(shown, hidden) {
   </center>
 </div>
   <!-- Feedback Form-->
-      <div style="max-width:1200px;background-image: url(img/demo/textscreen.jpg);background-repeat: repeat-x;background-attachment: fixed;background-size: cover;background-position: center;opacity:0.9;">
+<form action="Feedback.html" method="post">
+<div style="background-image: url(img/demo/textscreen.jpg);background-repeat: repeat-x;background-attachment: fixed;background-size: cover;background-position: center;opacity:0.9;">
   <div id="feedbackform" class="w3-row-padding" style="display:none;">
       <!--INSERT FEEDBACK FORM-->
       <div class="w3-main">
@@ -107,69 +107,51 @@ function show(shown, hidden) {
         </div>
         <!-- /.container -->
         </nav>
-          
-          <header id="portfolio">
-            <div class="w3-container">
-            <center>
-                <h1 style="margin-top:100px;margin-bottom:50px;color:black;"><b>Customer Feedback Form:</b></h1>
-                <h3 style="margin-top:50px;margin-bottom:50px;color:black;">To participate in the customer feedback please fillout the following questions. Your suggestions, Compliments, Complaints are important to us.</h3>
-            </center>
-            </div>
-          </header>
-          <hr>
-          <h4 style="text-align:center"><b>This feedback is a:</b> <input id="suggestion" style="margin-left:10%;" type="checkbox">Suggestion<input id="compliment" style="margin-left:10%;" type="checkbox">Compliment<input id="complaint" style="margin-left:10%;" type="checkbox">Complaint</h4>
-          <hr>
-          <div style="float:center;margin-top:50px;">
-              <h4 id="service" style="margin-left:10%;"><b>About which services?</b></h4>
-              <h4>
-                <input id="olpage" style="margin-left:10%;" type="checkbox" name="servicechoice">Online Page<br><br>
-                <input id="ordersys" style="margin-left:10%;" type="checkbox" name="servicechoice">Ordering system<br><br>
-                <input id="servoffer" style="margin-left:10%;" type="checkbox" name="servicechoice">Service Offered<br><br>
-                <input id="paymentopt" style="margin-left:10%;" type="checkbox" name="servicechoice">Payment Options<br><br>
-                <input id="licences" style="margin-left:10%;" type="checkbox" name="servicechoice">Our Licences<br><br>
-                <input id="business" style="margin-left:10%;" type="checkbox" name="servicechoice">Business Handling<br><br>
-                <input id="otherserv" style="margin-left:10%;" type="checkbox" name="servicechoice">   <label><b>Other:</b></label>
-                <input type="text" placeholder="Your topic of concern" name="servicechoice" required>
-              </h4>
-          </div>
-          
-          <div style="float:center;margin-top:50px;">
-              <hr>
-              <h4 id="issue" style="margin-left:10%;margin-top:30px;"><b>About which issue?</b></h4>
-              <h4>
-                <input id="itemcond" style="margin-left:10%;" type="checkbox">Item condition<br><br>
-                <input id="renderserv" style="margin-left:10%;" type="checkbox">Rendered service<br><br>
-                <input id="staffint" style="margin-left:10%;" type="checkbox">Staff interaction<br><br>
-                <input id="custserv" style="margin-left:10%;" type="checkbox">Customer Service<br><br>
-                <input id="accesibility" style="margin-left:10%;" type="checkbox">Accessibility of service<br><br>
-                <input id="fees" style="margin-left:10%;" type="checkbox">Fees/Charges/Refunds<br><br>
-                <input id="website" style="margin-left:10%;" type="checkbox">Website<br><br>
-                <input id="otherissue" style="margin-left:10%;" type="checkbox">   <label><b>Other:</b></label>
-                <input type="text" placeholder="Your topic of concern" name="otherissue" required>
-              </h4>
-          </div>
-          
-          <div style="float:center;margin-top:50px;">
-            <hr>
+        <div class="w3-container" style="color:black;">
+            
+          <div style="float:center;margin-top:100px;">
+              <h4>Indicate the subject matter:</h4>
+              <input type="text" name="subject" placeholder="Feedback topic" class="form-control input-md" required="">
+              <h4 style="margin-top:20px;">Indicate your rating:</h4>
+              <input type="text" name="rating" placeholder="Rating" class="form-control input-md" required="">
+              
               <h4 id="feedbackcontent" style="margin-left:10%;margin-top:30px;"><b>Please write the details of your feedback here:</b></h4>
-                <textarea id="feedbacktext" name="comment" class="col-md-12" placeholder="Write your feedback here. Your concerns are important to us" style="height:150px"></textarea><br>
+                <textarea name="comment" class="col-md-12" placeholder="Write your feedback here. Your concerns are important to us" style="height:150px"></textarea><br>
                 <center>
-                <button style="margin-bottom:150px;margin-top:20px;" id="submitbutton" type="submit">Submit</button>
+                <input type="submit" name="submit" value="submit">
                 </center>
           </div>
           <center>
-            <h1 class="bottombrand wow flipInX">iClickServices</h1>
+            <h1 style="margin-top:30%" class="bottombrand wow flipInX">iClickServices</h1>
             <p>
             &copy; Webtek 2017 
             </p>
           </center>
 
-      </div>
+        </div>
       </div>
   </div>
+</div>
 
 <!-- End page content -->
 
-
+</form>
 </body>
 </html>
+
+<?php
+include("database/db_conection.php");//make connection here  
+if(isset($_POST['submit']))  {
+    $subject = $_POST("name");
+    $comment = $_POST("comment");
+    $rating = $_POST("rating");
+    if(($_POST("name") || $_POST("comment")) == ''){
+        echo"<script>alert('Oops! Please fill out all fields')</script>";
+        exit(); 
+    }
+    $query = "insert into feedback(feedback_id, comments, rating, sp_id)values('$name','$comment','$rating','')"
+    if(mysql_query($query)){
+        echo"<script>alert('Oops! Please fill out all fields')</script>";
+    }
+}
+?>
