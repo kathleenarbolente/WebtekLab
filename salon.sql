@@ -5,7 +5,7 @@ USE `salon`;
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2017 at 03:46 AM
+-- Generation Time: May 22, 2017 at 08:44 AM
 -- Server version: 5.7.9
 -- PHP Version: 5.6.16
 
@@ -50,10 +50,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
 --
 
 INSERT INTO `accounts` (`customer_id`, `first_name`, `last_name`, `username`, `password`, `gender`, `address`, `country`, `mobile_number`, `email`, `bio`, `status`) VALUES
-(5, 'mark', 'mark', 'mark', 'f1b5a91d4d6ad523f2610114591c007e75d15084', 'Male', 'mamam', 'DJ', 23223, 'a@gmail.com', 'adsdsadsdsa', 1),
-(9, 'Mark', 'Abad', 'marko', '1b7ad54f057b59ef44edcaa1fda8cc0d07a167ed', 'Male', 'Bakakeng', 'ZW', 909012211, 'mark@gmail.com', 'I am legend', 1),
-(11, 'Lando', 'landa', 'lan', '3ed79aa6d5c36a10b6251a882ea2edb68b0dfae4', 'Male', 'Laguna', 'CH', 90909, 'lan@gmail.com', 'I am always awake', 0),
-(13, 'ryan', 'ryan', 'ryan', 'ea3cd978650417470535f3a4725b6b5042a6ab59', 'Male', 'Jan lang', 'AG', 34343434, 'ryan@gmail.com', 'gwapo', 0);
+(6, 'Sample', 'Lang', 'sample', '8151325dcdbae9e0ff95f9f9658432dbedfdb209', 'Male', 'sadsda', 'BS', 232323, 'sample@gmail.com', 'ako na lang', 0);
 
 -- --------------------------------------------------------
 
@@ -69,16 +66,15 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `username` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
   PRIMARY KEY (`admin_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`admin_id`, `last_name`, `first_name`, `username`, `password`) VALUES
-(1, 'mark', 'mar', 'mark', 'mark'),
-(2, 'nick', 'mendoza', 'nicks', 'nicks'),
-(3, 'kath', 'lyne', 'kath', 'kath');
+(1, 'mark', 'mark', 'mark', 'mark'),
+(4, '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -89,19 +85,24 @@ INSERT INTO `admin` (`admin_id`, `last_name`, `first_name`, `username`, `passwor
 DROP TABLE IF EXISTS `feedback`;
 CREATE TABLE IF NOT EXISTS `feedback` (
   `feedback_id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) NOT NULL,
   `comments` varchar(300) DEFAULT NULL,
   `rating` int(2) DEFAULT NULL,
-  `sp_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`feedback_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `serv_id` int(11) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `time` time NOT NULL,
+  PRIMARY KEY (`feedback_id`),
+  KEY `customer_id_idx` (`customer_id`),
+  KEY `serv_id_idx` (`serv_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `feedback`
 --
 
-INSERT INTO `feedback` (`feedback_id`, `comments`, `rating`, `sp_id`) VALUES
-(1, 'dont touch my tralala', 4, 2),
-(2, 'you are very good', 2, 4);
+INSERT INTO `feedback` (`feedback_id`, `customer_id`, `comments`, `rating`, `serv_id`, `date`, `time`) VALUES
+(3, 6, 'hahaha', 3, 9, '2017-05-03', '11:20:22'),
+(4, 6, 'wewewe', 4, 9, '2017-05-05', '08:21:00');
 
 -- --------------------------------------------------------
 
@@ -112,19 +113,22 @@ INSERT INTO `feedback` (`feedback_id`, `comments`, `rating`, `sp_id`) VALUES
 DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
   `message_id` int(11) NOT NULL AUTO_INCREMENT,
+  `c_id` int(11) NOT NULL,
   `date` date DEFAULT NULL,
   `time` time DEFAULT NULL,
   `content` varchar(500) DEFAULT NULL,
-  PRIMARY KEY (`message_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `s_id` int(11) NOT NULL,
+  PRIMARY KEY (`message_id`),
+  KEY `customer_id` (`c_id`),
+  KEY `s_id_idx` (`s_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `message`
 --
 
-INSERT INTO `message` (`message_id`, `date`, `time`, `content`) VALUES
-(1, '2017-05-03', '08:20:18', 'Hi i need your service'),
-(2, '2017-05-03', '17:48:00', 'Dont do that again');
+INSERT INTO `message` (`message_id`, `c_id`, `date`, `time`, `content`, `s_id`) VALUES
+(3, 6, '2017-05-04', '09:22:37', 'ano', 9);
 
 -- --------------------------------------------------------
 
@@ -147,7 +151,14 @@ CREATE TABLE IF NOT EXISTS `request_accounts` (
   `bio` varchar(500) DEFAULT NULL,
   `status` int(10) NOT NULL DEFAULT '1',
   PRIMARY KEY (`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `request_accounts`
+--
+
+INSERT INTO `request_accounts` (`customer_id`, `first_name`, `last_name`, `username`, `password`, `gender`, `address`, `country`, `mobile_number`, `email`, `bio`, `status`) VALUES
+(7, 'Ian', 'Paul', 'name', 'a027184a55211cd23e3f3094f1fdc728df5e0500', 'Male', 'Bakakeng', 'AD', 3298393, 'haha@gmail.com', 'ajdhjsd', 1);
 
 -- --------------------------------------------------------
 
@@ -169,10 +180,10 @@ CREATE TABLE IF NOT EXISTS `request_sp` (
   `email` varchar(100) NOT NULL,
   `spbio` varchar(100) NOT NULL,
   `serviceOffer` varchar(100) NOT NULL,
-  `spservices` varchar(100) DEFAULT NULL,
+  `service_desc` varchar(100) NOT NULL,
   `status` int(10) NOT NULL DEFAULT '1',
   PRIMARY KEY (`serv_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -182,20 +193,20 @@ CREATE TABLE IF NOT EXISTS `request_sp` (
 
 DROP TABLE IF EXISTS `services`;
 CREATE TABLE IF NOT EXISTS `services` (
-  `serv_id` int(11) NOT NULL,
-  `customer_id` int(11) NOT NULL,
-  `service_name` varchar(45) DEFAULT NULL,
-  `prices` int(7) DEFAULT NULL,
-  PRIMARY KEY (`serv_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `service_id` int(11) NOT NULL AUTO_INCREMENT,
+  `service_name` varchar(45) NOT NULL,
+  `prices` float DEFAULT NULL,
+  PRIMARY KEY (`service_id`),
+  UNIQUE KEY `service_name_UNIQUE` (`service_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `services`
 --
 
-INSERT INTO `services` (`serv_id`, `customer_id`, `service_name`, `prices`) VALUES
-(1, 1, 'Manicure and Pedicure', 2323),
-(2, 2, 'Facial', 12122);
+INSERT INTO `services` (`service_id`, `service_name`, `prices`) VALUES
+(1, 'hair', 3232),
+(2, 'facial', 3223);
 
 -- --------------------------------------------------------
 
@@ -217,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `service_providers` (
   `email` varchar(100) NOT NULL,
   `spbio` varchar(100) NOT NULL,
   `serviceOffer` varchar(100) NOT NULL,
-  `spservices` varchar(100) DEFAULT NULL,
+  `service_desc` varchar(100) NOT NULL,
   `status` int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`serv_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -226,22 +237,35 @@ CREATE TABLE IF NOT EXISTS `service_providers` (
 -- Dumping data for table `service_providers`
 --
 
-INSERT INTO `service_providers` (`serv_id`, `first_name`, `last_name`, `username`, `password`, `gender`, `address`, `country`, `mobilenumber`, `email`, `spbio`, `serviceOffer`, `spservices`, `status`) VALUES
-(1, 'Nolly', 'Aurellio', 'Nol', 'nol', 'Female', 'Aurora Hill', 'PH', 33434, 'nol@gmail.com', 'webtech is life', 'Makeup', 's', 1),
-(2, 'Nicole', 'Navarets', 'Nics', 'nics', 'Female', 'Aurora Hill', 'PH', 323236, 'nics@gmail.com', 'webtech is life', 'Facial', 's', 2),
-(3, 'Kathy', 'Ambly', 'Kathy', 'kathy', 'Female', 'Guisad', 'PH', 9382938, 'kathy@gmail.com', 'webtech is life', 'Makeup', 's', 3),
-(4, 'Michaela', 'Bernardo', 'Mics', 'mics', 'Female', 'Pinsao Pilot', 'PH', 126386239, 'mics@gmail.com', 'webtech is life', 'a', 'b', 4),
-(5, 'Jamina', 'Delos Santos', 'Jamie', 'jamie', 'female', 'Queen of Peace', 'PH', 72438247, 'jamie@gmail.com', 'webtech is life', 'q', 'w', 5),
-(6, 'Zsarlene', 'Estrellado', 'Zia', 'zia', 'female', 'T.Alonzo', 'PH', 243345, 'zia@gmail.com', 'webtech is life', 'a', 'a', 6),
-(7, 'Faye', 'Anonuevo', 'Faye', 'faye', 'female', 'upper fairview', 'PH', 121324, 'faye@gmail.com', 'webtech is life', 's', 's', 7),
-(8, 'Jasiel', 'Dumdum', 'Jasiel', 'jasiel', 'male', 'guisad', 'PH', 8437834, 'jasiel@gmail.com', 'webtech is life', 's', 's', 8),
-(9, 'Maureen', 'Manaois', 'Mau', 'mau', 'female', 'Legarda', 'PH', 131232, 'mau@gmail.com', 'webtech is life', 'a', 'd', 9),
-(10, 'Abigeyl', 'Dumpit', 'Abi', 'abi', 'male', 'Trancoville', 'PH', 8643283, 'abi@gmail.com', 'webtech is life', 'a', 'a', 10),
-(11, 'Ken', 'Lagunilla', 'ken', 'ken', 'male', 'Bakakeng', 'PH', 472565, 'ken@gmail.com', 'webtech is life', 't', 'b', 11),
-(12, 'Aeneid', 'Adversalo', 'Aeneid', 'aeneid', 'male', 'Bakakeng', 'PH', 724872, 'aeneid@gmail.com', 'webtech is life', 'w', 'e', 12),
-(13, 'James', 'Cabalse', 'James', 'james', 'male', 'Bonifacio', 'PH', 73643741, 'james@gmail.com', 'webtech is life', 'q', 'j', 13),
-(14, 'Jan', 'Cabigas', 'Jan', 'jan', 'male', 'Aurora Hill', 'PH', 6356281, 'jan@gmail.com', 'webtech is life', 'r', 'h', 14),
-(15, 'Marky', 'Abad', 'Marky', 'marky', 'male', 'T. Alonzo', 'PH', 846837, 'marky@gmail.com', 'webtech is life', 'h', 'j', 15);
+INSERT INTO `service_providers` (`serv_id`, `first_name`, `last_name`, `username`, `password`, `gender`, `address`, `country`, `mobilenumber`, `email`, `spbio`, `serviceOffer`, `service_desc`, `status`) VALUES
+(9, 'mark', 'mark', 'mark', 'f1b5a91d4d6ad523f2610114591c007e75d15084', 'Male', 'dfdfd', 'AI', 3232323, 'mark@gmail.com', 'mamammaa', 'Facial', 'adwewewew', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `service_request`
+--
+
+DROP TABLE IF EXISTS `service_request`;
+CREATE TABLE IF NOT EXISTS `service_request` (
+  `request_id` int(11) NOT NULL AUTO_INCREMENT,
+  `custom_id` int(11) NOT NULL,
+  `serviceOffer` varchar(100) NOT NULL,
+  `dateAvail` datetime NOT NULL,
+  `servce_id` int(11) NOT NULL,
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`request_id`),
+  KEY `custom_id_idx` (`custom_id`),
+  KEY `servce_id_idx` (`servce_id`),
+  KEY `serviceOffer_idx` (`serviceOffer`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `service_request`
+--
+
+INSERT INTO `service_request` (`request_id`, `custom_id`, `serviceOffer`, `dateAvail`, `servce_id`, `date`) VALUES
+(1, 6, 'hair', '2017-05-03 09:21:18', 9, '2017-05-12 10:25:23');
 
 -- --------------------------------------------------------
 
@@ -252,23 +276,59 @@ INSERT INTO `service_providers` (`serv_id`, `first_name`, `last_name`, `username
 DROP TABLE IF EXISTS `transactions`;
 CREATE TABLE IF NOT EXISTS `transactions` (
   `request_id` int(11) NOT NULL AUTO_INCREMENT,
-  `spname` varchar(45) NOT NULL,
-  `custname` varchar(45) NOT NULL,
-  `address` varchar(45) NOT NULL,
-  `serviceAvailed` varchar(45) NOT NULL,
+  `sp_id` int(11) NOT NULL,
+  `cust_id` int(11) NOT NULL,
+  `serviceDesc` varchar(45) NOT NULL,
   `status` varchar(45) NOT NULL,
   `remarks` varchar(200) NOT NULL,
-  PRIMARY KEY (`request_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`request_id`),
+  UNIQUE KEY `serv_id_UNIQUE` (`sp_id`),
+  UNIQUE KEY `cust_id_UNIQUE` (`cust_id`),
+  KEY `custname_idx` (`cust_id`),
+  KEY `serviceAvailed_idx` (`serviceDesc`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `transactions`
 --
 
-INSERT INTO `transactions` (`request_id`, `spname`, `custname`, `address`, `serviceAvailed`, `status`, `remarks`) VALUES
-(1, 'Joneil Europa', 'John Paul', 'Santiago', 'Hair coloring', 'pending', 'good'),
-(2, 'Maryl Abwan', 'Edu Michael', 'Marikina', 'Makeup', 'done', 'good service'),
-(3, 'Joneil Europa', 'Richard Pawn', 'Quezon', 'Facial', 'decline', 'not good record');
+INSERT INTO `transactions` (`request_id`, `sp_id`, `cust_id`, `serviceDesc`, `status`, `remarks`, `date`) VALUES
+(4, 9, 6, 'facial', 'pending', 'haha', '2017-05-04 09:16:15');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD CONSTRAINT `customer_id` FOREIGN KEY (`customer_id`) REFERENCES `accounts` (`customer_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `serv_id` FOREIGN KEY (`serv_id`) REFERENCES `service_providers` (`serv_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `message`
+--
+ALTER TABLE `message`
+  ADD CONSTRAINT `c_id` FOREIGN KEY (`c_id`) REFERENCES `accounts` (`customer_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `s_id` FOREIGN KEY (`s_id`) REFERENCES `service_providers` (`serv_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `service_request`
+--
+ALTER TABLE `service_request`
+  ADD CONSTRAINT `custom_id` FOREIGN KEY (`custom_id`) REFERENCES `accounts` (`customer_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `servce_id` FOREIGN KEY (`servce_id`) REFERENCES `service_providers` (`serv_id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `serviceOffer` FOREIGN KEY (`serviceOffer`) REFERENCES `services` (`service_name`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `transactions`
+--
+ALTER TABLE `transactions`
+  ADD CONSTRAINT `cust_id` FOREIGN KEY (`cust_id`) REFERENCES `accounts` (`customer_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `serviceDesc` FOREIGN KEY (`serviceDesc`) REFERENCES `services` (`service_name`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `sp_id` FOREIGN KEY (`sp_id`) REFERENCES `service_providers` (`serv_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
