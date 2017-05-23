@@ -52,13 +52,13 @@ if(!$_SESSION['username'])
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav navbar-right">
 			<li>
-			<a class="page-scroll" href="#dashboard">Dashboard</a>
+			<a class="page-scroll" href="#requests">Requests</a>
 			</li>
 			<li>
-			<a class="page-scroll" href="#request">Feedback & Services</a>
+			<a class="page-scroll" href="#feedback">Feedback & Services</a>
 			</li>
 			<li>
-			<a class="page-scroll" href="#client">Request</a>
+			<a class="page-scroll" href="#transactions">Transactions</a>
 			</li>
             <li>
 			<a class="page-scroll" href="#accounts">Accounts</a>
@@ -74,7 +74,7 @@ if(!$_SESSION['username'])
 </nav>
 <!-- Section Services
 ================================================== -->
-<section id="dashboard">
+<section id="requests">
 <div class="container">
 <div class="row">
 	<div class="col-lg-12 text-center">
@@ -87,216 +87,18 @@ if(!$_SESSION['username'])
     
 <!-- /.carousel -->
 
-<!-- Section About
+    <!-- Section Timeline
 ================================================== -->
-<section id="dashboard">
-<div class="container">
-	<div class="row">
-		<div class="col-lg-10 col-lg-offset-1 text-center">
-
-				<h1 align="center">Transactions</h1>
-             	<table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
-				<thead>   
-		  
-				<tr>
-					<th>Service Provider</th>
-					<th>Customer</th>  			
-					<th>Address</th>  
-					<th>Service Availed</th>
-					<th>Status</th>
-					<th>Remarks</th>
-				</tr>  
-				</thead>  
-		  
-				<?php  
-					include("database/db_conection.php");  
-					$view_salon_query="select * from transactions";//select query for viewing users.
-					$run=mysqli_query($dbcon,$view_salon_query);//here run the sql query.  
-			  
-					while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
-					{  
-						$request_id=$row[0];  
-						$spname=$row[1];
-						$custname=$row[2];			
-						$address=$row[3];  
-						$serviceAvailed=$row[4];
-						$status=$row[5];
-						$remarks=$row[6];
-
-				?>  
-		  
-				<tr>     
-					<td><?php echo $spname;  ?></td>   
-					<td><?php echo $custname;  ?></td>
-					<td><?php echo $address;  ?></td>
-					<td><?php echo $serviceAvailed;  ?></td> 
-					<td><?php echo $status;  ?></td> 
-					<td><?php echo $remarks;  ?></td> 
-				</tr>  
-		  
-				<?php } ?>  
-		  
-			</table>    
-	</div>
-</div>
-</div>
-</section>
-
-<section id="request">
-<div class="container">
-	<div class="row">
-		<div class="col-lg-10 col-lg-offset-1 text-center">
-
-				<h1 align="center">Services</h1>
-             	<table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
-				<thead>   
-		  
-				<tr>
-					<th>Service Id</th>
-					<th>Customer Id</th>  			
-					<th>Service Description</th>  
-					<th>Prices</th>
-				</tr>  
-				</thead>  
-		  
-				<?php  
-					include("database/db_conection.php");  
-					$view_salon_query="select * from services";//select query for viewing users.
-					$run=mysqli_query($dbcon,$view_salon_query);//here run the sql query.  
-			  
-					while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
-					{  
-						$service_id=$row[0];  
-						$customer_id=$row[1];
-						$service_name=$row[2];			  
-						$prices=$row[3];
-
-				?>  
-		  
-				<tr>     
-					<td><?php echo $service_id;  ?></td>   
-					<td><?php echo $customer_id;  ?></td>
-					<td><?php echo $service_name;  ?></td>
-					<td><?php echo $prices;  ?></td> 
-				</tr>  
-		  
-				<?php } ?>  
-		  
-			</table>    
-	</div>
-</div>
-</div>
-</section>
-    
-
-	<!-- Section About
-================================================== -->
-<section id="request">
-<div class="container">
-	<div class="row">
-		<div class="col-lg-10 col-lg-offset-1 text-center">
-
-				<h1 align="center">Feedback</h1>
-             	<table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
-				<thead>   
-		  
-				<tr>
-					<th>Feedback Id</th>
-					<th>Comments</th>  			
-					<th>Ratings</th>  
-					<th>SP Id</th>
-				</tr>  
-				</thead>  
-		  
-				<?php  
-					include("database/db_conection.php");  
-					$view_salon_query="select * from feedback";//select query for viewing users.
-					$run=mysqli_query($dbcon,$view_salon_query);//here run the sql query.  
-			  
-					while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
-					{  
-						$feedback_id=$row[0];  
-						$comments=$row[1];
-						$rating=$row[2];			
-						$sp_id=$row[3];  
-
-
-				?>  
-		  
-				<tr>     
-					<td><?php echo $feedback_id;  ?></td>  
-					<td><?php echo $comments;  ?></td>
-					<td><?php echo $rating;  ?></td> 
-					<td><?php echo $sp_id;  ?></td> 
-				</tr>  
-		  
-				<?php } ?>  
-		  
-			</table>    
-	</div>
-</div>
-</div>
-</section>
-
-<!-- Section About
-================================================== -->
-<section id="request">
-<div class="container">
-	<div class="row">
-		<div class="col-lg-10 col-lg-offset-1 text-center">
-
-				<h1 align="center">Messages</h1>
-             	<table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
-				<thead>   
-		  
-				<tr>
-					<th>Message Id</th>
-					<th>Date</th>  			
-					<th>Time</th>  
-					<th>Content</th>
-				</tr>  
-				</thead>  
-		  
-				<?php  
-					include("database/db_conection.php");  
-					$view_salon_query="select * from message";//select query for viewing users.
-					$run=mysqli_query($dbcon,$view_salon_query);//here run the sql query.  
-			  
-					while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
-					{  
-						$message_id=$row[0];  
-						$date=$row[1];
-						$time=$row[2];			  
-						$content=$row[3];
-
-				?>  
-		  
-				<tr>     
-					<td><?php echo $message_id;  ?></td>   
-					<td><?php echo $date;  ?></td>
-					<td><?php echo $time;  ?></td>
-					<td><?php echo $content;  ?></td> 
-				</tr>  
-		  
-				<?php } ?>  
-		  
-			</table>    
-	</div>
-</div>
-</div>
-</section>
-<!-- Section Timeline
-================================================== -->
-<section id="client">
+<section id="requests">
 <div class="container">
 <div class="row">
 		<div class="table-scrol">  
 		<h1 align="center">Customers Request for Account</h1>
 	  
-		<div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
+		<div><!--this is used for responsive display in mobile and other devices-->  
 	  
 	  
-		<table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
+		<table class="table table-responsive table-bordered table-hover table-striped">  
 				<thead>   
 		  
 				<tr>
@@ -360,16 +162,16 @@ if(!$_SESSION['username'])
 	</section>
 <!-- Section Social
 ================================================== -->
-<section id="service">
+<section id="requests">
 <div class="container">
 <div class="row">
 		<div class="table-scrol">  
 		<h1 align="center">Service Providers Request for Account</h1>
 	  
-		<div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
+		<div><!--this is used for responsive display in mobile and other devices-->  
 	  
 	  
-		<table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
+		<table class="table table-responsive table-bordered table-hover table-striped">  
 				<thead>  
 		  
 				<tr> 
@@ -440,6 +242,206 @@ if(!$_SESSION['username'])
 	</div>
 </section>
 
+
+
+<section id="feedback">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1 text-center">
+
+				<h1 align="center">Services</h1>
+             	<table class="table table-responsive table-bordered table-hover table-striped">  
+				<thead>   
+		  
+				<tr>
+					<th>Service Id</th>
+					<th>Customer Id</th>  			
+					<th>Service Description</th>  
+					<th>Prices</th>
+				</tr>  
+				</thead>  
+		  
+				<?php  
+					include("database/db_conection.php");  
+					$view_salon_query="select * from services";//select query for viewing users.
+					$run=mysqli_query($dbcon,$view_salon_query);//here run the sql query.  
+			  
+					while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
+					{  
+						$service_id=$row[0];  
+						$customer_id=$row[1];
+						$service_name=$row[2];			  
+						$prices=$row[3];
+
+				?>  
+		  
+				<tr>     
+					<td><?php echo $service_id;  ?></td>   
+					<td><?php echo $customer_id;  ?></td>
+					<td><?php echo $service_name;  ?></td>
+					<td><?php echo $prices;  ?></td> 
+				</tr>  
+		  
+				<?php } ?>  
+		  
+			</table>    
+	</div>
+</div>
+</div>
+</section>
+    
+
+	<!-- Section About
+================================================== -->
+<section id="feedback">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1 text-center">
+
+				<h1 align="center">Feedback</h1>
+             	<table class="table table-responsive table-bordered table-hover table-striped">  
+				<thead>   
+		  
+				<tr>
+					<th>Feedback Id</th>
+					<th>Comments</th>  			
+					<th>Ratings</th>  
+					<th>SP Id</th>
+				</tr>  
+				</thead>  
+		  
+				<?php  
+					include("database/db_conection.php");  
+					$view_salon_query="select * from feedback";//select query for viewing users.
+					$run=mysqli_query($dbcon,$view_salon_query);//here run the sql query.  
+			  
+					while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
+					{  
+						$feedback_id=$row[0];  
+						$comments=$row[1];
+						$rating=$row[2];			
+						$sp_id=$row[3];  
+
+
+				?>  
+		  
+				<tr>     
+					<td><?php echo $feedback_id;  ?></td>  
+					<td><?php echo $comments;  ?></td>
+					<td><?php echo $rating;  ?></td> 
+					<td><?php echo $sp_id;  ?></td> 
+				</tr>  
+		  
+				<?php } ?>  
+		  
+			</table>    
+	</div>
+</div>
+</div>
+</section>
+
+<!-- Section About
+================================================== -->
+<section id="feedback">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1 text-center">
+
+				<h1 align="center">Messages</h1>
+             	<table class="table table-responsive table-bordered table-hover table-striped">  
+				<thead>   
+		  
+				<tr>
+					<th>Message Id</th>
+					<th>Date</th>  			
+					<th>Time</th>  
+					<th>Content</th>
+				</tr>  
+				</thead>  
+		  
+				<?php  
+					include("database/db_conection.php");  
+					$view_salon_query="select * from message";//select query for viewing users.
+					$run=mysqli_query($dbcon,$view_salon_query);//here run the sql query.  
+			  
+					while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
+					{  
+						$message_id=$row[0];  
+						$date=$row[1];
+						$time=$row[2];			  
+						$content=$row[3];
+
+				?>  
+		  
+				<tr>     
+					<td><?php echo $message_id;  ?></td>   
+					<td><?php echo $date;  ?></td>
+					<td><?php echo $time;  ?></td>
+					<td><?php echo $content;  ?></td> 
+				</tr>  
+		  
+				<?php } ?>  
+		  
+			</table>    
+	</div>
+</div>
+</div>
+</section>
+
+<!-- Section About
+================================================== -->
+<section id="transactions">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1 text-center">
+
+				<h1 align="center">Transactions</h1>
+             	<table class="table table-responsive table-bordered table-hover table-striped">  
+				<thead>   
+		  
+				<tr>
+					<th>Service Provider</th>
+					<th>Customer</th>  			
+					<th>Address</th>  
+					<th>Service Availed</th>
+					<th>Status</th>
+					<th>Remarks</th>
+				</tr>  
+				</thead>  
+		  
+				<?php  
+					include("database/db_conection.php");  
+					$view_salon_query="select * from transactions";//select query for viewing users.
+					$run=mysqli_query($dbcon,$view_salon_query);//here run the sql query.  
+			  
+					while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
+					{  
+						$request_id=$row[0];  
+						$spname=$row[1];
+						$custname=$row[2];			
+						$address=$row[3];  
+						$serviceAvailed=$row[4];
+						$status=$row[5];
+						$remarks=$row[6];
+
+				?>  
+		  
+				<tr>     
+					<td><?php echo $spname;  ?></td>   
+					<td><?php echo $custname;  ?></td>
+					<td><?php echo $address;  ?></td>
+					<td><?php echo $serviceAvailed;  ?></td> 
+					<td><?php echo $status;  ?></td> 
+					<td><?php echo $remarks;  ?></td> 
+				</tr>  
+		  
+				<?php } ?>  
+		  
+			</table>    
+	</div>
+</div>
+</div>
+</section>
 <!-- Section Timeline
 ================================================== -->
 <section id="accounts">
@@ -448,10 +450,10 @@ if(!$_SESSION['username'])
 		<div class="table-scrol">  
 		<h1 align="center">Customers</h1>
 	  
-		<div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
+		<div><!--this is used for responsive display in mobile and other devices-->  
 	  
 	  
-		<table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
+		<table class="table table-responsive table-bordered table-hover table-striped">  
 				<thead>   
 		  
 				<tr>
@@ -527,10 +529,10 @@ if(!$_SESSION['username'])
 		<div class="table-scrol">  
 		<h1 align="center">Service Providers</h1>
 	  
-		<div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->  
+		<div><!--this is used for responsive display in mobile and other devices-->  
 	  
 	  
-		<table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
+		<table class="table table-responsive table-bordered table-hover table-striped">  
 				<thead>  
 		  
 				<tr> 
