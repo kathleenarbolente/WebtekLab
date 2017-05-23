@@ -74,7 +74,8 @@ function show(shown, hidden) {
   </center>
 </div>
   <!-- Feedback Form-->
-      <div style="background-image: url(img/demo/textscreen.jpg);background-repeat: repeat-x;background-attachment: fixed;background-size: cover;background-position: center;opacity:0.9;">
+<form action="Feedback.html" method="post">
+<div style="background-image: url(img/demo/textscreen.jpg);background-repeat: repeat-x;background-attachment: fixed;background-size: cover;background-position: center;opacity:0.9;">
   <div id="feedbackform" class="w3-row-padding" style="display:none;">
       <!--INSERT FEEDBACK FORM-->
       <div class="w3-main">
@@ -106,18 +107,17 @@ function show(shown, hidden) {
         </div>
         <!-- /.container -->
         </nav>
-          
-          <header id="portfolio">
-            <div class="w3-container" style="color:black;">
+        <div class="w3-container" style="color:black;">
             
           <div style="float:center;margin-top:100px;">
               <h4>Indicate the subject matter:</h4>
-              <input id="Subject"  name="Subject" type="text" placeholder="Feedback topic" class="form-control input-md" required="">
+              <input type="text" name="subject" placeholder="Feedback topic" class="form-control input-md" required="">
+              <input type="text" name="rating" placeholder="Feedback topic" class="form-control input-md" required="">
               
               <h4 id="feedbackcontent" style="margin-left:10%;margin-top:30px;"><b>Please write the details of your feedback here:</b></h4>
-                <textarea id="feedbacktext" name="comment" class="col-md-12" placeholder="Write your feedback here. Your concerns are important to us" style="height:150px"></textarea><br>
+                <textarea name="comment" class="col-md-12" placeholder="Write your feedback here. Your concerns are important to us" style="height:150px"></textarea><br>
                 <center>
-                <button style="margin-bottom:150px;margin-top:20px;" id="submitbutton" type="submit">Submit Feedback</button>
+                <input type="submit" name="submit" value="submit">
                 </center>
           </div>
           <center>
@@ -127,12 +127,30 @@ function show(shown, hidden) {
             </p>
           </center>
 
-      </div>
+        </div>
       </div>
   </div>
+</div>
 
 <!-- End page content -->
 
-
+</form>
 </body>
 </html>
+
+<?php
+include("database/db_conection.php");//make connection here  
+if(isset($_POST['submit']))  {
+    $subject = $_POST("name");
+    $comment = $_POST("comment");
+    $rating = $_POST("rating");
+    if(($_POST("name") || $_POST("comment")) == ''){
+        echo"<script>alert('Oops! Please fill out all fields')</script>";
+        exit(); 
+    }
+    $query = "insert into feedback(feedback_id, comments, rating, sp_id)values('$name','$comment','$rating','')"
+    if(mysql_query($query)){
+        echo"<script>alert('Oops! Please fill out all fields')</script>";
+    }
+}
+?>
