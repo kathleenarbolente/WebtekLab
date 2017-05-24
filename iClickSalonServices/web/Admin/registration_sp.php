@@ -328,7 +328,7 @@
 							</div>
 							
 							<div class="form-group"> 
-							  <label class="col-md-4 control-label" for="gender">Gender</label>
+							  <label class="col-md-4 control-label" for="gender">Services</label>
 								<label class="radio-inline" for="gender-0">
 								  <input type="radio" name="serviceOffer" id="gender-0" value="Manicure and Pedicure" checked="checked">
 								  Manicure and Pedicure
@@ -349,16 +349,16 @@
 
 							<!-- Textarea -->
 							<div class="form-group">
-							  <label for="SPservices">Specific Services Offered</label>                    
-								<textarea class="form-control" id="address" name="spservices" placeholder="Specify services you can do"></textarea>
+							  <label for="SPservices">Service Description</label>                    
+								<textarea class="form-control" id="address" name="service_desc" placeholder="Specify services you can do"></textarea>
 							</div><br>
 	
 							
-                            <input class="btn btn-lg btn-success btn-block" type="submit" value="register" name="registration_sp" >
+                            <input class="btn btn-lg btn-success btn-block" type="submit" value="register" name="registration_sp" ></input>  
   
                         </fieldset>  
                     </form>  
-                    <center><b>Already registered ?</b> <br><a href="sp_login.php">Login here</a></center><!--for centered text-->  
+                    <center><b>Already registered ?</b> <br></b><a href="sp_login.php">Login here</a></center><!--for centered text-->  
                 </div>  
             </div>  
         </div>  
@@ -391,7 +391,7 @@ if(isset($_POST['registration_sp']))
 	$email=$_POST['email'];
 	$spbio=$_POST['spbio'];
 	$serviceOffer=$_POST['serviceOffer'];
-	$spservices=$_POST['spservices'];
+	$service_desc=$_POST['service_desc'];
     if($last_name=='' || $first_name=='' || $username=='' || $password=='' || $gender=='' || $mobilenumber=='')  
     {  
         //javascript use for input checking
@@ -410,7 +410,7 @@ if(isset($_POST['registration_sp']))
     }
 	
 	//insert the user into the database.  
-    $sql="insert into request_sp (first_name,last_name,username,password,gender,address,country,mobilenumber,email,spbio,serviceOffer,spservices) VALUE ('$first_name','$last_name','$username','$password','$gender','$address','$country','$mobilenumber','$email','$spbio','$serviceOffer','s$spservices')";
+    $sql="insert into request_sp (first_name,last_name,username,password,gender,address,country,mobilenumber,email,spbio,serviceOffer,service_desc) VALUE ('$first_name','$last_name','$username','$password','$gender','$address','$country','$mobilenumber','$email','$spbio','$serviceOffer','$service_desc')";
     
         	//check if records added in table
 	if(mysqli_query($dbcon, $sql)){
