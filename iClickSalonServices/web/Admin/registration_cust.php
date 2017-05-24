@@ -327,11 +327,11 @@
 							</div>						
 							
 							
-                            <input class="btn btn-lg btn-success btn-block" type="submit" value="register" name="registration_cust" ></input>  
+                            <input class="btn btn-lg btn-success btn-block" type="submit" value="register" name="registration_cust" > 
   
                         </fieldset>  
                     </form>  
-                    <center><b>Already registered ?</b> <br></b><a href="login.php">Login here</a></center><!--for centered text-->  
+                    <center><b>Already registered ?</b> <br><a href="login.php">Login here</a></center><!--for centered text-->  
                 </div>  
             </div>  
         </div>  

@@ -44,7 +44,7 @@ session_start();//session starts here
                           <!--  <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a> -->  
                         </fieldset>  
                     </form> 					
-					<center><br></b><a href="admin_login.php">Log in as Admin</a></center>
+					<center><br><a href="admin_login.php">Log in as Admin</a></center>
 
 				</div>  
             </div>  
